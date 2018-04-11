@@ -4,7 +4,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import AppRouter, { routes } from '../../router';
 import { Intro, type Props } from './Intro';
-import { Link, PrimaryButton, Button } from '../../ui';
+import { Link, GradientButton, Button } from '../../ui';
 import { VERIFICATION_PROFILE_ROUTE } from '../constants';
 
 jest.mock('../../card/order/cardOrderApi', () => ({
@@ -31,16 +31,7 @@ describe('Verification flow Intro', () => {
       component
         .find(Link)
         .find({ to: VERIFICATION_PROFILE_ROUTE })
-        .find(PrimaryButton).length,
-    ).toBe(1);
-  });
-
-  it('can exit flow', () => {
-    expect(
-      component
-        .find(Link)
-        .find({ to: routes.BASE })
-        .find(Button).length,
+        .find(GradientButton).length,
     ).toBe(1);
   });
 

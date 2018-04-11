@@ -11,7 +11,6 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 
 import pageTemplate from './pageTemplate';
 import BottomNavigation from '../ui/bottomNavigation';
-import TopBar from '../ui/topBar';
 import { Progress } from '../ui';
 
 describe('pageTemplate higher-order component', () => {
@@ -48,10 +47,6 @@ describe('pageTemplate higher-order component', () => {
 
   it('renders BottomNavigation component', () => {
     expect(component.find(BottomNavigation).length).toBe(1);
-  });
-
-  it('renders TopBar component', () => {
-    expect(component.find(TopBar).length).toBe(1);
   });
 
   it('renders progress', () => {

@@ -4,7 +4,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { PhoneField } from './phoneField';
 import { Profile } from './Profile';
-import { Field, PrimaryButton } from '../../ui';
+import { Field, GradientButton } from '../../ui';
 
 describe('Verification flow Profile', () => {
   let component;
@@ -42,7 +42,7 @@ describe('Verification flow Profile', () => {
   });
 
   it('renders submit button', () => {
-    expect(component.find(PrimaryButton).find('[type="submit"]').length).toBe(
+    expect(component.find(GradientButton).find('[type="submit"]').length).toBe(
       1,
     );
   });
