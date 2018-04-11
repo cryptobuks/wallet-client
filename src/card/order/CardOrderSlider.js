@@ -15,21 +15,21 @@ export type Props = {
 const youAreInTheWaitingListSection = (
   <GradientSlider>
     <WhiteBackgroundSlide>
-      <GradientHeading>
+      <GradientHeading center>
         You are in the <br />
         waiting list
       </GradientHeading>
-      <Paragraph>
+      <Paragraph center>
         With Change Card you can make your payments and ATM withdrawals with
         Bitcoin, Ether, or any other supported currency.
       </Paragraph>
     </WhiteBackgroundSlide>
     <WhiteBackgroundSlide>
-      <GradientHeading>
+      <GradientHeading center>
         You are in the <br />
         waiting list
       </GradientHeading>
-      <Paragraph>
+      <Paragraph center>
         Change Card is universally accepted, even in stores that don't accept
         virtual currencies.
       </Paragraph>
@@ -40,21 +40,21 @@ const youAreInTheWaitingListSection = (
 const joinWaitingListSection = (
   <GradientSlider>
     <WhiteBackgroundSlide>
-      <GradientHeading>
+      <GradientHeading center>
         Pay with any <br />
         currency
       </GradientHeading>
-      <Paragraph>
+      <Paragraph center>
         With Change Card you can make your payments and ATM withdrawals with
         Bitcoin, Ether, or any other supported currency.
       </Paragraph>
     </WhiteBackgroundSlide>
     <WhiteBackgroundSlide>
-      <GradientHeading>
+      <GradientHeading center>
         Accepted <br />
         everywhere
       </GradientHeading>
-      <Paragraph>
+      <Paragraph center>
         Change Card is universally accepted, even in stores that don't accept
         virtual currencies.
       </Paragraph>
