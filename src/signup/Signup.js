@@ -1,50 +1,90 @@
 // @flow
-
-import React, { Component } from 'react';
+import React from 'react';
 import type { MapStateToProps } from 'react-redux';
+import { type FormProps, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import AppRouter from '../router';
-import EmailPage from './EmailPage';
-import PasswordPage from './PasswordPage';
+import AppRouter, { routes } from '../router';
+import {
+  BackLink,
+  Bottom,
+  Field,
+  Form,
+  FormFeedback,
+  PrimaryButton,
+  renderCheckbox,
+  Top,
+  WrappedContent,
+} from '../ui';
+import signupFormSubmitHandler from './signupFormSubmitHandler';
+
+export const required = (value: any) =>
+  value ? undefined : "Don't forget this field :)";
 
 export type Props = {
   authenticated: boolean,
-};
+} & FormProps;
 
-type State = {
-  page: number,
-};
-
-export class Signup extends Component<Props, State> {
-  state = {
-    page: 1,
-  };
-
-  nextPage = () => {
-    this.setState({ page: this.state.page + 1 });
-  };
-
-  previousPage = () => {
-    this.setState({ page: this.state.page - 1 });
-  };
-
-  render() {
-    const { authenticated } = this.props;
-    const { page } = this.state;
-    if (authenticated) {
-      return <AppRouter defaultOnEnter />;
-    }
-    return (
-      <div>
-        {page === 1 && <EmailPage onSubmit={this.nextPage} />}
-        {page === 2 && <PasswordPage previousPage={this.previousPage} />}
-      </div>
-    );
+export const Signup = (props: Props) => {
+  const { handleSubmit, error, submitting, authenticated } = props;
+  if (authenticated) {
+    return <AppRouter defaultOnEnter />;
   }
-}
+  return (
+    <Form onSubmit={handleSubmit(signupFormSubmitHandler)}>
+      <BackLink to={routes.BASE} />
+      <WrappedContent>
+        <Top>
+          {error && <FormFeedback>{error}</FormFeedback>}
+          <Field
+            type="email"
+            name="email"
+            label="Email address"
+            placeholder="Type your email here..."
+            validate={required}
+          />
+          <Field
+            name="password"
+            type="password"
+            autoFocus
+            label="Password"
+            placeholder="Type your password here..."
+            validate={required}
+          />
+          <Field
+            name="tos"
+            id="tos"
+            component={renderCheckbox}
+            validate={required}
+            label={
+              <span>
+                I agree to the{' '}
+                <a
+                  href="https://getchange.com/legal/terms/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Terms of Service
+                </a>
+              </span>
+            }
+          />
+        </Top>
+        <Bottom>
+          <PrimaryButton inline type="submit" disabled={submitting}>
+            Next
+          </PrimaryButton>
+        </Bottom>
+      </WrappedContent>
+    </Form>
+  );
+};
 
 const mapStateToProps: MapStateToProps<*, *, *> = state => ({
   authenticated: !!state.login.token,
 });
 
-export default connect(mapStateToProps)(Signup);
+const ConnectedSignupForm = connect(mapStateToProps)(Signup);
+
+export default reduxForm({
+  form: 'signup',
+})(ConnectedSignupForm);
