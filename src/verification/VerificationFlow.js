@@ -3,7 +3,7 @@ import type { MapStateToProps } from 'react-redux';
 import { connect } from 'react-redux';
 import React from 'react';
 import styled from 'styled-components';
-import { Link, NavigationDots, Progress, WrappedContent } from '../ui';
+import { Link, Progress, WrappedContent } from '../ui';
 import {
   VERIFICATION_INTRO_ROUTE,
   VERIFICATION_PROFILE_ROUTE,
@@ -12,14 +12,9 @@ import {
   VERIFICATION_ADDRESS_VERIFICATION_ROUTE,
   VERIFICATION_SELFIE_VERIFICATION_ROUTE,
 } from './constants';
-
-export const NavigationDotsContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: auto;
-  margin-bottom: -1.7em;
-`;
+import BackIcon from './icon/BackIcon';
+import VerificationProgress from './VerificationProgress';
+import { routes } from '../router';
 
 const Container = styled.div`
   background-color: white;
@@ -28,10 +23,14 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
-const BackLink = styled.span`
-  font-size: 14px;
-  text-align: left;
-  color: #a1a1a1;
+const BackLink = styled(Link)`
+  position: absolute;
+  top: 15px;
+  left: 15px;
+`;
+
+const ProgressContainer = styled.div`
+  margin-top: 25px;
 `;
 
 const stepComponents = [
@@ -72,16 +71,20 @@ export const verificationFlow = (WrappedComponent: *) => {
     return (
       <Container>
         {props.progress && <Progress />}
+        {(activeIndex > 0 && (
+          <BackLink id="back-link" to={backButtonRoutes[activeIndex - 1]}>
+            <BackIcon>Back</BackIcon>
+          </BackLink>
+        )) || (
+          <BackLink id="back-link" to={routes.BASE}>
+            <BackIcon>Back</BackIcon>
+          </BackLink>
+        )}
+        <ProgressContainer>
+          <VerificationProgress total={count} current={activeIndex} />
+        </ProgressContainer>
         <WrappedContent>
           <WrappedComponent {...props} />
-          <NavigationDotsContainer>
-            <NavigationDots count={count} activeIndex={activeIndex} />
-          </NavigationDotsContainer>
-          {activeIndex > 0 && (
-            <Link id="back-link" to={backButtonRoutes[activeIndex - 1]}>
-              <BackLink>Back</BackLink>
-            </Link>
-          )}
         </WrappedContent>
       </Container>
     );
