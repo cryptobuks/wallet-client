@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import type { MapStateToProps } from 'react-redux';
 import { keyframes } from 'styled-components';
 import { CSSTransition } from 'react-transition-group';
-import TopBar from '../ui/topBar';
 import BottomNavigation from '../ui/bottomNavigation';
 import { Content, Progress } from '../ui';
 import menu from '../menu';
@@ -57,7 +56,6 @@ export const pageTemplate = (WrappedComponent: *) => {
     <CSSTransition in={props.blur} classNames="blur" timeout={200}>
       <StyledContent className={props.blur ? 'blur' : ''}>
         {props.progress && <Progress />}
-        <TopBar />
         <WrappedComponent {...props} />
         <BottomNavigation menu={menu} />
       </StyledContent>
