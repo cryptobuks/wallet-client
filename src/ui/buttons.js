@@ -45,9 +45,10 @@ export const GradientButton = Button.extend`
   );
   box-shadow: 0 2px 6px 0 rgba(2, 189, 165, 0.4);
   height: 52px;
+  min-width: 140px;
   margin: 0 auto;
   border-radius: 54.5px;
-  font-family: OpenSansBold;
+  font-family: OpenSansBold, Fallback, sans-serif;
   color: ${variables.colorWhite};
   text-shadow: 0 1px 0 #0cb88e;
 
