@@ -81,7 +81,7 @@ export const verificationFlow = (WrappedComponent: *) => {
           </BackLink>
         )}
         <ProgressContainer>
-          <VerificationProgress total={count} current={activeIndex} />
+          <VerificationProgress total={count} current={activeIndex + 1} />
         </ProgressContainer>
         <WrappedContent>
           <WrappedComponent {...props} />
