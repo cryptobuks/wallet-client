@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import styled from 'styled-components';
+import variables from '../variables';
 
 type FileUploadProps = {
   type: 'camera' & 'upload',
@@ -32,19 +33,25 @@ const FileUploadBase = ({
   </label>
 );
 
-const FileUpload = styled(FileUploadBase)`
+export const FileUpload = styled(FileUploadBase)`
   display: inline;
   width: fit-content;
-  padding: 14px 32px 14px 32px;
-  height: 44px;
-  border-radius: 49px;
-  color: #02bda5;
-  background-color: #e5f9f3;
+  background-image: linear-gradient(
+    to right,
+    ${variables.colorGreenLighter},
+    ${variables.colorGreenBright}
+  );
+  padding: 1em 2em 0 2em;
   box-shadow: 0 2px 6px 0 rgba(2, 189, 165, 0.4);
+  height: 52px;
+  min-width: 140px;
+  margin: 0 auto;
+  border-radius: 54.5px;
   border: 0;
-  margin-bottom: 6px;
-  font-size: 16px;
-  text-align: center;
+  font-family: OpenSansBold, Fallback, sans-serif;
+  font-size: ${variables.fontSizeNormal};
+  color: ${variables.colorWhite};
+  text-shadow: 0 1px 0 #0cb88e;
   text-transform: uppercase;
 
   & input {
@@ -61,4 +68,15 @@ const FileUpload = styled(FileUploadBase)`
   }
 `;
 
-export default FileUpload;
+export const FileUploadLink = styled(FileUploadBase)`
+  color: ${variables.colorGreen};
+
+  & input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+`;

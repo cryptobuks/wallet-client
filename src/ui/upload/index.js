@@ -1,3 +1,2 @@
-import FileUpload from './FileUpload';
-
-export default FileUpload;
+// @flow
+export * from './FileUpload';

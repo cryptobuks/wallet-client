@@ -14,17 +14,25 @@ const ButtonBase = ({ alt, inline, ...props }: Props) => (
   <button {...props}>{props.children}</button>
 );
 
-export const Button = styled(ButtonBase)`
+export const GradientButton = styled(ButtonBase)`
   display: ${props => (props.inline ? 'inline' : 'block')};
   width: ${props => (props.inline ? 'fit-content' : '100%')};
+  background-image: linear-gradient(
+    to right,
+    ${variables.colorGreenLighter},
+    ${variables.colorGreenBright}
+  );
   padding: 0 2em 0 2em;
-  height: 44px;
-  border-radius: 49px;
-  background-color: #ffffff;
-  color: #02bda5;
+  box-shadow: 0 2px 6px 0 rgba(2, 189, 165, 0.4);
+  height: 52px;
+  min-width: 140px;
+  margin: 0 auto;
+  border-radius: 54.5px;
   border: 0;
-  margin-bottom: 6px;
-  font-size: 16px;
+  font-family: OpenSansBold, Fallback, sans-serif;
+  font-size: ${variables.fontSizeNormal};
+  color: ${variables.colorWhite};
+  text-shadow: 0 1px 0 #0cb88e;
   text-transform: uppercase;
 
   &:hover {
@@ -37,26 +45,7 @@ export const Button = styled(ButtonBase)`
   }
 `;
 
-export const GradientButton = Button.extend`
-  background-image: linear-gradient(
-    to right,
-    ${variables.colorGreenLighter},
-    ${variables.colorGreenBright}
-  );
-  box-shadow: 0 2px 6px 0 rgba(2, 189, 165, 0.4);
-  height: 52px;
-  min-width: 140px;
-  margin: 0 auto;
-  border-radius: 54.5px;
-  font-family: OpenSansBold, Fallback, sans-serif;
-  color: ${variables.colorWhite};
-  text-shadow: 0 1px 0 #0cb88e;
-
-  a:hover {
-    text-decoration: none;
-    color: inherit;
-  }
-`;
+export const Button = GradientButton;
 
 export const Link = styled(RouterLink)`
   color: inherit;
