@@ -2,6 +2,7 @@
 
 import { shallow } from 'enzyme';
 import React from 'react';
+import jest from 'jest-mock';
 import {
   beforeEach,
   describe,
