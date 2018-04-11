@@ -64,15 +64,13 @@
   "scripts": {
     "precommit": "lint-staged",
     "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css":
-      "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "start:staging": "REACT_APP_ENV=staging npm run start",
     "build": "npm run build-css && react-scripts build",
     "test": "npm run build-css && flow && react-scripts test --env=jsdom",
-    "test:ci":
-      "npm run build-css && flow && react-scripts test --env=jsdom --testResultsProcessor ./node_modules/jest-junit",
+    "test:ci": "npm run build-css && flow && react-scripts test --env=jsdom --testResultsProcessor ./node_modules/jest-junit",
     "flow": "flow",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
@@ -108,6 +106,7 @@
     "jest-enzyme": "^4.2.0",
     "jest-junit": "^3.6.0",
     "jest-mock": "^22.4.3",
+    "jest-styled-components": "^5.0.1",
     "lint-staged": "^7.0.4",
     "node-sass-chokidar": "^0.0.3",
     "npm-run-all": "^4.1.1",
