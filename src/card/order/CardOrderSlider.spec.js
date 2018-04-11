@@ -21,7 +21,7 @@ describe('CardOrderSlider component', () => {
 
   it('renders slides for users who already ordered card', () => {
     const youAreInWaitingListHeading = (
-      <GradientHeading>
+      <GradientHeading center>
         You are in the <br />
         waiting list
       </GradientHeading>
@@ -34,13 +34,13 @@ describe('CardOrderSlider component', () => {
 
   it('renders slides for users who have not ordered card', () => {
     const payWithAnyCurrencyHeading = (
-      <GradientHeading>
+      <GradientHeading center>
         Pay with any <br />
         currency
       </GradientHeading>
     );
     const acceptedAnywhereHeading = (
-      <GradientHeading>
+      <GradientHeading center>
         Accepted <br />
         everywhere
       </GradientHeading>
