@@ -3,7 +3,6 @@
 import React from 'react';
 import type { MapStateToProps } from 'react-redux';
 import { connect } from 'react-redux';
-import styled from 'styled-components';
 import AppRouter from './router';
 import {
   Button,
