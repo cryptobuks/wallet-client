@@ -15,7 +15,7 @@ export const DefaultTheme: Theme = {
   altBackground: '#c6f3ff',
   main: '#02bda5',
   alt: '#083b70',
-  text: '#a1a1a1',
+  text: '#0c0c0c',
   altText: '#2a2a2a',
   breakpoints: {
     mobile: 0,
