@@ -21,7 +21,6 @@ import { Signup } from './signup';
 import { Login, Logout } from './login';
 import { Overview } from './overview';
 import { Card } from './card';
-import { Marketplace } from './marketplace';
 import { Landing } from './landing';
 import { Settings } from './settings';
 import { unregister } from './registerServiceWorker';
@@ -107,10 +106,6 @@ const startApp = () => {
                     exact
                     path="/card"
                     component={appWrapper(authenticatedPage(Card))}
-                  />
-                  <Route
-                    path="/marketplace"
-                    component={appWrapper(authenticatedPage(Marketplace))}
                   />
                   <Route
                     path="/settings"
