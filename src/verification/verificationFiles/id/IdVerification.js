@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import styled from 'styled-components';
-import { FileUpload, GradientHeading, Heading, Paragraph } from '../../../ui';
+import { FileUpload, GradientHeading, Paragraph } from '../../../ui';
 import { VERIFICATION_ADDRESS_VERIFICATION_ROUTE } from '../../constants';
 import passport from './img/passport.png';
 import verificationFileUploader from '../verificationFileUploader';

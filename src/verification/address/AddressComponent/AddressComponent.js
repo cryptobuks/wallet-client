@@ -2,9 +2,6 @@
 
 import React, { Component } from 'react';
 import { connect, type MapStateToProps } from 'react-redux';
-import styled from 'styled-components';
-import { Heading } from '../../../ui';
-import variables from '../../../ui/variables';
 import AddressSuggest from './AddressSuggest';
 import AddressForm from './AddressForm';
 import withAddress from '../withAddress';
@@ -17,10 +14,6 @@ type Props = {
 type State = {
   showFullForm: boolean,
 };
-
-const StyledHeading = styled(Heading)`
-  color: ${variables.colorNeutralDarkest};
-`;
 
 export const AddressComponent = class AddressComponent extends Component<
   Props,
