@@ -9,12 +9,11 @@ import {
   Top,
   Bottom,
   Heading,
-  LinkButton,
-  Link,
   PrimaryButton,
   Form,
   Field,
   FormFeedback,
+  BackLink,
 } from '../../../ui';
 import { routes } from '../../../router';
 
@@ -22,6 +21,7 @@ export const ResetPassword = (props: FormProps) => {
   const { handleSubmit, error } = props;
   return (
     <WrappedContent>
+      <BackLink to={routes.BASE} />
       <Top>
         <Heading>
           Forgot password?
@@ -43,12 +43,9 @@ export const ResetPassword = (props: FormProps) => {
         </Form>
       </Top>
       <Bottom>
-        <PrimaryButton type="submit" form="resetPasswordForm">
+        <PrimaryButton inline type="submit" form="resetPasswordForm">
           Reset my password
         </PrimaryButton>
-        <Link to={routes.BASE}>
-          <LinkButton>Cancel</LinkButton>
-        </Link>
       </Bottom>
     </WrappedContent>
   );

@@ -3,13 +3,12 @@ import React from 'react';
 import { type FormProps, reduxForm } from 'redux-form';
 import { routes } from '../router';
 import {
+  BackLink,
   Bottom,
   Field,
   Form,
   FormFeedback,
   Heading,
-  Link,
-  LinkButton,
   PrimaryButton,
   Top,
   WrappedContent,
@@ -19,6 +18,7 @@ export const EmailPage = (props: FormProps) => {
   const { handleSubmit, error } = props;
   return (
     <Form onSubmit={handleSubmit}>
+      <BackLink to={routes.BASE} />
       <WrappedContent>
         <Top>
           <Heading>Let&apos;s set up your account.</Heading>
@@ -31,10 +31,9 @@ export const EmailPage = (props: FormProps) => {
           />
         </Top>
         <Bottom>
-          <PrimaryButton type="submit">Next</PrimaryButton>
-          <Link to={routes.BASE}>
-            <LinkButton>Cancel</LinkButton>
-          </Link>
+          <PrimaryButton inline type="submit">
+            Next
+          </PrimaryButton>
         </Bottom>
       </WrappedContent>
     </Form>

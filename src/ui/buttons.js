@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import variables from './variables';
 import { Link as RouterLink } from 'react-router-dom';
+import BackIcon from './icon/BackIcon';
 
 type Props = {
   alt: ?boolean,
@@ -76,4 +77,14 @@ export const LinkButton = Button.extend`
 
 LinkButton.displayName = 'LinkButton';
 
-export default { Button, PrimaryButton, Link };
+const StyledBackLink = styled(Link)`
+  position: absolute;
+  top: 15px;
+  left: 15px;
+`;
+
+export const BackLink = (props: any) => (
+  <StyledBackLink {...props}>
+    <BackIcon />
+  </StyledBackLink>
+);

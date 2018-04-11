@@ -1,47 +1,32 @@
 // @flow
 import React from 'react';
-import styled from 'styled-components';
 import { type FormProps, reduxForm } from 'redux-form';
 import { loginFormSubmitHandler } from './loginRoutines';
 import {
+  BackLink,
   Bottom,
   Field,
   Form,
   FormFeedback,
-  Heading,
   Link,
-  LinkButton,
   PrimaryButton,
   Top,
   WrappedContent,
 } from '../ui';
 import { routes } from '../router';
 
-const Links = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`;
-
-const StyledLinkButton = styled(LinkButton)`
-  padding: 0 1em;
-`;
 const WrappedForm = WrappedContent.withComponent(Form);
 
 export const LoginForm = (props: FormProps) => {
   const { handleSubmit, error } = props;
   return (
     <WrappedForm onSubmit={handleSubmit(loginFormSubmitHandler)}>
+      <BackLink to={routes.BASE} />
       <Top>
-        <Heading>
-          Welcome back.
-          <br />
-          Please log in.
-        </Heading>
         {error && <FormFeedback className="mt-4">{error}</FormFeedback>}
         <Field
           name="username"
-          label="Email address"
+          label="Email"
           type="email"
           placeholder="Type your email here..."
         />
@@ -57,17 +42,12 @@ export const LoginForm = (props: FormProps) => {
           type="password"
           placeholder="If enabled..."
         />
+        <Link to={routes.RESET_PASSWORD}>Forgot password</Link>
       </Top>
       <Bottom>
-        <PrimaryButton type="submit">Log In</PrimaryButton>
-        <Links>
-          <Link to={routes.BASE}>
-            <StyledLinkButton>Cancel</StyledLinkButton>
-          </Link>
-          <Link to={routes.RESET_PASSWORD}>
-            <StyledLinkButton>Forgot password</StyledLinkButton>
-          </Link>
-        </Links>
+        <PrimaryButton inline type="submit">
+          Log In
+        </PrimaryButton>
       </Bottom>
     </WrappedForm>
   );

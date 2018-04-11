@@ -3,7 +3,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { ResetPassword } from './ResetPassword';
-import { Field, PrimaryButton, LinkButton, Heading } from '../../../ui';
+import { Field, PrimaryButton, BackLink, Heading } from '../../../ui';
 
 describe('Overview component', () => {
   let component;
@@ -35,6 +35,6 @@ describe('Overview component', () => {
   });
 
   it('renders back button', () => {
-    expect(component.find(LinkButton).length).toBe(1);
+    expect(component.find(BackLink).length).toBe(1);
   });
 });

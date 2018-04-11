@@ -2,19 +2,26 @@
 import React from 'react';
 // import VisibilityIcon from 'material-ui-icons/Visibility';
 import { type FormProps, reduxForm } from 'redux-form';
+import styled from 'styled-components';
 import {
   Bottom,
   Field,
   Form,
   FormFeedback,
   Heading,
-  LinkButton,
   PrimaryButton,
   renderCheckbox,
   Top,
   WrappedContent,
 } from '../ui';
 import signupFormSubmitHandler from './signupFormSubmitHandler';
+import BackIcon from '../ui/icon/BackIcon';
+
+const StyledBackLink = styled.button`
+  position: absolute;
+  top: 15px;
+  left: 15px;
+`;
 
 export const required = (value: any) =>
   value ? undefined : "Don't forget this field :)";
@@ -23,6 +30,9 @@ export const PasswordPage = (props: FormProps) => {
   const { handleSubmit, previousPage, error, pristine, submitting } = props;
   return (
     <Form onSubmit={handleSubmit(signupFormSubmitHandler)}>
+      <StyledBackLink onClick={previousPage}>
+        <BackIcon />
+      </StyledBackLink>
       <WrappedContent>
         <Top>
           <Heading>
@@ -59,10 +69,9 @@ export const PasswordPage = (props: FormProps) => {
           {error && <FormFeedback className="mt-3">{error}</FormFeedback>}
         </Top>
         <Bottom>
-          <PrimaryButton type="submit" disabled={pristine || submitting}>
+          <PrimaryButton inline type="submit" disabled={pristine || submitting}>
             Next
           </PrimaryButton>
-          <LinkButton onClick={previousPage}>Back</LinkButton>
         </Bottom>
       </WrappedContent>
     </Form>
