@@ -4,22 +4,57 @@ import React from 'react';
 import type { MapStateToProps } from 'react-redux';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import AppRouter, { routes } from '../../router';
-import { Button, Heading, Link, Paragraph, PrimaryButton, Top } from '../../ui';
+import AppRouter from '../../router';
+import {
+  GradientButton,
+  GradientHeading,
+  Link,
+  Paragraph,
+  Top,
+} from '../../ui';
+import variables from '../../ui/variables';
 import withUser from '../../user/withUser';
 import { VERIFICATION_PROFILE_ROUTE } from '../constants';
+import addressLogo from './img/address_logo.png';
+import idLogo from './img/id_logo.png';
+import selfieLogo from './img/selfie_logo.png';
 
-const StyledHeading = styled(Heading)`
-  color: #2a2a2a;
-  margin-bottom: 14px;
+const StyledHeading = GradientHeading.extend`
+  text-align: center;
 `;
 
-const Bulletpoint = styled(Paragraph)`
-  font-size: 14px;
+const CenteredParagraph = Paragraph.extend`
+  font-family: OpenSansSemibold, Fallback, sans-serif;
+  text-align: center;
+  margin-top: 11px;
 `;
 
-const Links = styled(Paragraph)`
-  margin-top: 24px;
+const CenteredParagraphSmall = CenteredParagraph.extend`
+  max-width: 285px;
+  font-size: ${variables.fontSizeTiny};
+  color: #a8a5a5;
+`;
+
+const IconList = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  & p {
+    font-size: ${variables.fontSizeTiny};
+    text-align: center;
+  }
+`;
+
+const Logo = styled.img`
+  display: block;
+  max-width: 50px;
+  max-height: 30px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+const LogoParagraph = Paragraph.extend`
+  max-width: 100px;
 `;
 
 export type Props = {
@@ -32,32 +67,36 @@ export const Intro = (props: Props) =>
   ) : (
     <div>
       <Top>
-        <StyledHeading>We need to get to know you better.</StyledHeading>
+        <StyledHeading>Before we get started ...</StyledHeading>
       </Top>
-      <Paragraph alt>
-        The wallet is down for maintenance. You may still get ready for launch.
-      </Paragraph>
-      <ul>
-        <li>
-          <Bulletpoint alt>
-            Please have your passport copy and utility bill nearby.
-          </Bulletpoint>
-        </li>
-        <li>
-          <Bulletpoint alt>
-            As a welcome to the community we are giving you a Change card for
-            free.
-          </Bulletpoint>
-        </li>
-      </ul>
-      <Links>
+      <CenteredParagraph>
+        Change is a regulated EU entity, so we need to know who you are before
+        you can make your first purchase.
+      </CenteredParagraph>
+      <CenteredParagraph>Be ready to</CenteredParagraph>
+      <IconList>
+        <div>
+          <Logo alt="ID icon" src={idLogo} />
+          <LogoParagraph>Upload a photo of your ID</LogoParagraph>
+        </div>
+        <div>
+          <Logo alt="Proof of address icon" src={addressLogo} />
+          <LogoParagraph>Provide proof of your address</LogoParagraph>
+        </div>
+        <div>
+          <Logo alt="Self-portrait icon" src={selfieLogo} />
+          <LogoParagraph>Take a self-portrait</LogoParagraph>
+        </div>
+      </IconList>
+      <CenteredParagraphSmall>
+        The service is currently available for the European Economic Area
+        citizens only.
+      </CenteredParagraphSmall>
+      <CenteredParagraph>
         <Link to={VERIFICATION_PROFILE_ROUTE}>
-          <PrimaryButton>Let’s get started</PrimaryButton>
+          <GradientButton inline>Next</GradientButton>
         </Link>
-        <Link to={routes.BASE}>
-          <Button>Cancel</Button>
-        </Link>
-      </Links>
+      </CenteredParagraph>
     </div>
   );
 
