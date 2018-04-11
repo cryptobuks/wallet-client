@@ -14,6 +14,12 @@ import {
   WrappedContent,
 } from '../ui';
 import { routes } from '../router';
+import variables from '../ui/variables';
+
+const StyledLink = Link.extend`
+  float: right;
+  color: ${variables.colorGreen};
+`;
 
 const WrappedForm = WrappedContent.withComponent(Form);
 
@@ -42,7 +48,7 @@ export const LoginForm = (props: FormProps) => {
           type="password"
           placeholder="If enabled..."
         />
-        <Link to={routes.RESET_PASSWORD}>Forgot password</Link>
+        <StyledLink to={routes.RESET_PASSWORD}>Forgot password</StyledLink>
       </Top>
       <Bottom>
         <PrimaryButton inline type="submit">
