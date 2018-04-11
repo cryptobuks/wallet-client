@@ -14,7 +14,7 @@ import { routes } from '../../../router';
 export const ResetPasswordDone = () => (
   <WrappedContent>
     <Top>
-      <Heading alt>
+      <Heading>
         Your request has been sent.
         <br />
         Go to email.

@@ -33,7 +33,7 @@ export const LoginForm = (props: FormProps) => {
   return (
     <WrappedForm onSubmit={handleSubmit(loginFormSubmitHandler)}>
       <Top>
-        <Heading alt>
+        <Heading>
           Welcome back.
           <br />
           Please log in.

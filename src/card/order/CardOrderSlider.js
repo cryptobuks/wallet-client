@@ -3,7 +3,7 @@
 import React from 'react';
 import {
   GradientHeading,
-  PrimaryParagraph,
+  Paragraph,
   GradientSlider,
   WhiteBackgroundSlide,
 } from '../../ui';
@@ -19,20 +19,20 @@ const youAreInTheWaitingListSection = (
         You are in the <br />
         waiting list
       </GradientHeading>
-      <PrimaryParagraph>
+      <Paragraph>
         With Change Card you can make your payments and ATM withdrawals with
         Bitcoin, Ether, or any other supported currency.
-      </PrimaryParagraph>
+      </Paragraph>
     </WhiteBackgroundSlide>
     <WhiteBackgroundSlide>
       <GradientHeading>
         You are in the <br />
         waiting list
       </GradientHeading>
-      <PrimaryParagraph>
+      <Paragraph>
         Change Card is universally accepted, even in stores that don't accept
         virtual currencies.
-      </PrimaryParagraph>
+      </Paragraph>
     </WhiteBackgroundSlide>
   </GradientSlider>
 );
@@ -44,20 +44,20 @@ const joinWaitingListSection = (
         Pay with any <br />
         currency
       </GradientHeading>
-      <PrimaryParagraph>
+      <Paragraph>
         With Change Card you can make your payments and ATM withdrawals with
         Bitcoin, Ether, or any other supported currency.
-      </PrimaryParagraph>
+      </Paragraph>
     </WhiteBackgroundSlide>
     <WhiteBackgroundSlide>
       <GradientHeading>
         Accepted <br />
         everywhere
       </GradientHeading>
-      <PrimaryParagraph>
+      <Paragraph>
         Change Card is universally accepted, even in stores that don't accept
         virtual currencies.
-      </PrimaryParagraph>
+      </Paragraph>
     </WhiteBackgroundSlide>
   </GradientSlider>
 );

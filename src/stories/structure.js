@@ -37,9 +37,9 @@ storiesOf('Structure', module)
           </Slide>
         </div>
         <div>
-          <Slide alt>
-            <Heading alt>Second slide</Heading>
-            <Paragraph alt>This is a test text on second slide</Paragraph>
+          <Slide>
+            <Heading>Second slide</Heading>
+            <Paragraph>This is a test text on second slide</Paragraph>
             <PrimaryButton alt>Action</PrimaryButton>
           </Slide>
         </div>

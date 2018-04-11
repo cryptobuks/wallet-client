@@ -48,7 +48,7 @@ export type Props = {
 export const Settings = ({ user, open2FaAuthModal, goTo, noop }: Props) => (
   <WrappedContent>
     <Top>
-      <Heading alt>My account</Heading>
+      <Heading>My account</Heading>
       <StyledList>
         <StyledListItem onClick={open2FaAuthModal}>
           <Item>2-Factor Authentication</Item>

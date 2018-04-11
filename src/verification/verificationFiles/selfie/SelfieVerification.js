@@ -16,7 +16,6 @@ export type Props = {
 };
 
 const LargeHeading = Heading.extend`
-  font-size: 36px;
   margin-bottom: 22px;
 `;
 
@@ -41,8 +40,8 @@ export class SelfieVerification extends Component<Props> {
   render() {
     return (
       <div>
-        <LargeHeading alt>Your facial similarity check.</LargeHeading>
-        <Paragraph alt>Please take a self-portrait of yourself.</Paragraph>
+        <LargeHeading center>Your facial similarity check</LargeHeading>
+        <Paragraph>Please take a self-portrait of yourself.</Paragraph>
         <WebcamContainer>
           <Webcam
             audio={false}

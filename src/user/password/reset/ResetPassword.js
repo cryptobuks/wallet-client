@@ -23,7 +23,7 @@ export const ResetPassword = (props: FormProps) => {
   return (
     <WrappedContent>
       <Top>
-        <Heading alt>
+        <Heading>
           Forgot password?
           <br />
           Send reset link to your email.

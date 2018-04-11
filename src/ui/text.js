@@ -4,18 +4,16 @@ import styled from 'styled-components';
 import variables from './variables';
 
 type Props = {
-  alt: boolean,
+  center: boolean,
   children: any,
 };
 
-const H1 = ({ alt, ...props }: Props) => <h1 {...props}>{props.children}</h1>;
-
-export const Heading = styled(H1)`
-  font-size: 30px;
-  color: ${props => (props.alt ? props.theme.alt : props.theme.main)};
-`;
+const H1 = ({ center, ...props }: Props) => (
+  <h1 {...props}>{props.children}</h1>
+);
 
 export const GradientHeading = styled(H1)`
+text-align: ${props => (props.center ? 'center' : 'left')};
   background: linear-gradient(
     to right,
     ${variables.colorGreenLight},
@@ -34,25 +32,28 @@ export const GradientHeading = styled(H1)`
   -webkit-text-fill-color: transparent;
 `;
 
-const H2 = ({ alt, ...props }: Props) => <h2 {...props}>{props.children}</h2>;
+export const Heading = GradientHeading;
+
+const H2 = ({ center, ...props }: Props) => (
+  <h2 {...props}>{props.children}</h2>
+);
 
 export const SubHeading = styled(H2)`
   font-size: 30px;
-  color: ${props => (props.alt ? props.theme.alt : props.theme.main)};
 `;
 
-const P = ({ alt, ...props }: Props) => <p {...props}>{props.children}</p>;
+const P = ({ center, ...props }: Props) => <p {...props}>{props.children}</p>;
 
 export const Paragraph = styled(P)`
-  font-size: 16px;
-  color: ${props => (props.alt ? props.theme.altText : props.theme.text)};
-`;
-
-export const PrimaryParagraph = styled(P)`
   color: ${variables.colorNeutralExtraDark};
-  font-family: ${variables.fontPrimary};
-  font-size: ${variables.fontSizeNormal};
   line-height: 1.5;
+  text-align: ${props => (props.center ? 'center' : 'left')};
 `;
 
-export default { Heading: Heading, SubHeading: SubHeading, Paragraph };
+export const ParagraphSmall = Paragraph.extend`
+  color: ${variables.colorNeutral};
+  font-size: ${variables.fontSizeSmall};
+  text-align: ${props => (props.center ? 'center' : 'left')};
+`;
+
+export default { Heading, SubHeading, Paragraph, ParagraphSmall };

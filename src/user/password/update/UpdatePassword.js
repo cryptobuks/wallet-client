@@ -28,7 +28,7 @@ export class PasswordPage extends React.Component<Props> {
     return (
       <WrappedContent>
         <Top>
-          <Heading alt>
+          <Heading>
             Reset your password.
             <br />
             Make it a good one!

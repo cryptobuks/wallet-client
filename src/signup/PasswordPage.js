@@ -25,7 +25,7 @@ export const PasswordPage = (props: FormProps) => {
     <Form onSubmit={handleSubmit(signupFormSubmitHandler)}>
       <WrappedContent>
         <Top>
-          <Heading alt>
+          <Heading>
             One more thing.
             <br />
             Create your password.
