@@ -7,6 +7,7 @@ import { PrimaryButton, Button } from '../buttons';
 import { Divider } from '../layout';
 import { Heading, Paragraph } from '../text';
 import pageActions from '../../page/pageActions'; // FIXME
+import variables from '../variables';
 
 type ModalType = 'Confirmation' | 'Prompt';
 
@@ -44,6 +45,10 @@ const StyledParagraph = Paragraph.extend`
 `;
 
 const CancelButton = Button.extend`
+  background: none;
+  box-shadow: none;
+  text-shadow: none;
+  color: ${variables.colorGreen};
   text-transform: uppercase;
   font-size: 12px;
   height: 20px;
@@ -97,7 +102,7 @@ export class Modal extends Component<Props> {
           <Box>
             <StyledHeading>{this.props.title}</StyledHeading>
             {this.props.description && (
-              <StyledParagraph alt>{this.props.description}</StyledParagraph>
+              <StyledParagraph>{this.props.description}</StyledParagraph>
             )}
             <div>{this.props.children}</div>
             {(() => {

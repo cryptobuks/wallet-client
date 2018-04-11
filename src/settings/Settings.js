@@ -62,7 +62,7 @@ export const Settings = ({ user, open2FaAuthModal, goTo, noop }: Props) => (
           <Item>Verification Status</Item>
           <Status>{user.isVerified ? 'Verified' : 'Not Verified'}</Status>
         </StyledListItem>
-        <StyledListItem onClick={open2FaAuthModal}>
+        <StyledListItem>
           <LinkItem to="/logout">Log Out</LinkItem>
         </StyledListItem>
       </StyledList>
