@@ -4,14 +4,13 @@ import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import styled from 'styled-components';
-import { FileUpload, Heading, Paragraph } from '../../../ui';
+import { FileUpload, GradientHeading, Heading, Paragraph } from '../../../ui';
 import { VERIFICATION_ADDRESS_VERIFICATION_ROUTE } from '../../constants';
 import passport from './img/passport.png';
 import verificationFileUploader from '../verificationFileUploader';
 
-const LargeHeading = Heading.extend`
-  font-size: 36px;
-  margin-bottom: 22px;
+const CenterHeading = GradientHeading.extend`
+  text-align: center;
 `;
 
 const Buttons = styled.div`
@@ -40,7 +39,7 @@ export const IdVerification = ({ onChoose, redirectToNextStep }: Props) => {
 
   return (
     <div>
-      <LargeHeading alt>Your proof of identification.</LargeHeading>
+      <CenterHeading>Your photo for identification</CenterHeading>
       <Paragraph alt>
         To verify your identity please upload a photo (less than 10MB) of your
         id card or passport identification page.

@@ -4,18 +4,23 @@ import React from 'react';
 import { connect, type MapStateToProps } from 'react-redux';
 import { push } from 'react-router-redux';
 import { type FormProps, reduxForm } from 'redux-form';
+import styled from 'styled-components';
 import {
   Field,
   Form,
   FormFeedback,
   FormGroup,
-  PrimaryButton,
+  GradientButton,
 } from '../../../../ui';
 import { VERIFICATION_ID_VERIFICATION_ROUTE } from '../../../constants';
 import { addressFormSubmitHandler } from '../../addressRoutine';
 import { type Address, type AddressForm } from '../../addressState';
 
 type Props = {} & FormProps;
+
+const FormGroupCenter = styled(FormGroup)`
+  text-align: center;
+`;
 
 export const AddressReduxForm = ({ handleSubmit, error }: Props) => (
   <div>
@@ -40,9 +45,11 @@ export const AddressReduxForm = ({ handleSubmit, error }: Props) => (
 
       <Field name="postalCode" label="Postal Code" type="text" />
 
-      <FormGroup className="mt-5">
-        <PrimaryButton type="submit">Next</PrimaryButton>
-      </FormGroup>
+      <FormGroupCenter className="mt-5">
+        <GradientButton inline type="submit">
+          Next
+        </GradientButton>
+      </FormGroupCenter>
     </Form>
   </div>
 );

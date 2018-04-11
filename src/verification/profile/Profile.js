@@ -13,24 +13,26 @@ import {
   FormFeedback,
   FormGroup,
   FormRow,
-  Heading,
   Label,
-  PrimaryButton,
+  GradientButton,
 } from '../../ui';
 import { PhoneField } from './phoneField';
 import { profileFormSubmitHandler, withProfile } from '../../user/profile';
 import { VERIFICATION_ADDRESS_ROUTE } from '../constants';
 
-const StyledHeading = styled(Heading)`
-  color: #2a2a2a;
+type Props = {} & FormProps;
+
+const FormWithoutMargin = styled(Form)`
+  margin-top: 0 !important;
 `;
 
-type Props = {} & FormProps;
+const FormGroupCenter = styled(FormGroup)`
+  text-align: center;
+`;
 
 export const Profile = ({ handleSubmit, error }: Props) => (
   <div>
-    <StyledHeading>Who are you?</StyledHeading>
-    <Form
+    <FormWithoutMargin
       id="profileForm"
       onSubmit={handleSubmit(profileFormSubmitHandler)}
       className="mt-5"
@@ -67,11 +69,12 @@ export const Profile = ({ handleSubmit, error }: Props) => (
           </Col>
         </FormRow>
       </FormGroup>
-
-      <FormGroup className="mt-5">
-        <PrimaryButton type="submit">Next</PrimaryButton>
-      </FormGroup>
-    </Form>
+      <FormGroupCenter className="mt-5">
+        <GradientButton inline type="submit">
+          Next
+        </GradientButton>
+      </FormGroupCenter>
+    </FormWithoutMargin>
   </div>
 );
 

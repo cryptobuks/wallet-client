@@ -42,7 +42,6 @@ export const AddressComponent = class AddressComponent extends Component<
 
     return (
       <div>
-        <StyledHeading>Address</StyledHeading>
         {showFullForm ? (
           <AddressForm />
         ) : (
