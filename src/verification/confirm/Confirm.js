@@ -3,13 +3,19 @@ import React from 'react';
 import type { MapStateToProps } from 'react-redux';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { Heading, PrimaryButton } from '../../ui';
+import { Heading, Paragraph, ParagraphSmall, PrimaryButton } from '../../ui';
 import { FormFeedback } from '../../ui/form';
 import confirmRoutine from './confirmRoutine';
+import EUIcon from '../icon/EUIcon';
 
 const StyledHeading = styled(Heading)`
-  color: #2a2a2a;
   margin-bottom: 50px;
+`;
+
+const Buttons = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 type Props = {
@@ -19,9 +25,22 @@ type Props = {
 
 export const Confirm = ({ confirm, error }: Props) => (
   <div>
-    <StyledHeading>Please confirm your details.</StyledHeading>
+    <StyledHeading center>We will go over your documents</StyledHeading>
     {error && <FormFeedback>{error}</FormFeedback>}
-    <PrimaryButton onClick={() => confirm()}>Confirm</PrimaryButton>
+    <Paragraph center>
+      For any assistance contact us through settings page.
+    </Paragraph>
+    <ParagraphSmall center>
+      The protection of your personal details is of utmost importance to us. We
+      will always prioritize the security of our users. Change is a regulated
+      and licensed EU entity.
+    </ParagraphSmall>
+    <EUIcon />
+    <Buttons>
+      <PrimaryButton inline onClick={() => confirm()}>
+        Got it
+      </PrimaryButton>
+    </Buttons>
   </div>
 );
 

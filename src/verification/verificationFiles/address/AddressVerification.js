@@ -5,40 +5,29 @@ import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import styled from 'styled-components';
-import { FileUpload, Heading, Paragraph } from '../../../ui';
+import {
+  FileUpload,
+  FileUploadLink,
+  Heading,
+  Paragraph,
+  ParagraphSmall,
+} from '../../../ui';
 import { VERIFICATION_SELFIE_VERIFICATION_ROUTE } from '../../constants';
 import verificationFileUploader from '../verificationFileUploader';
-import address from './img/address.png';
-import variables from '../../../ui/variables';
+import EUIcon from '../../icon/EUIcon';
 
 const LargeHeading = Heading.extend`
-  font-size: 36px;
   margin-bottom: 22px;
 `;
 
 const Buttons = styled.div`
   display: flex;
-  justify-content: space-between;
-`;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-const AddressImg = styled.img`
-  width: 100%;
-  margin: 23px 0 33px 0;
-`;
-
-const List = styled.ul`
-  padding-left: 16px;
-
-  & li {
-    color: #19c3ed;
-    font-size: 16px;
-    list-style-type: disc;
-  }
-
-  & li span {
-    font-family: ${variables.fontPrimary};
-    font-size: 14px;
-    color: #2a2a2a;
+  ${FileUploadLink} {
+    margin-top: 25px;
   }
 `;
 
@@ -58,28 +47,24 @@ export const AddressVerification = ({
 
   return (
     <div>
-      <LargeHeading alt>Your proof of address.</LargeHeading>
-      <AddressImg src={address} />
-      <Paragraph alt>
-        Please upload (less than 10MB) one of the following documents with your
-        address and full name on it:
+      <LargeHeading center>Photo of proof of address</LargeHeading>
+      <Paragraph center>
+        A utility bill or credit card statement from the last 3 months sent to
+        your current address.
       </Paragraph>
-      <List>
-        <li>
-          <span>Utility bill (water, electricity, gas, etc)</span>
-        </li>
-        <li>
-          <span>Signed bank statement</span>
-        </li>
-        <li>
-          <span>Real estate lease contract</span>
-        </li>
-      </List>
+      <ParagraphSmall center>
+        The protection of your personal details is of utmost importance to us.
+        We will always prioritize the security of our users. Change is a
+        regulated and licensed EU entity.
+      </ParagraphSmall>
+      <EUIcon />
       <Buttons>
         <FileUpload type="camera" onChoose={chooseAndGoToNextStep}>
-          Camera
+          Take a photo
         </FileUpload>
-        <FileUpload onChoose={chooseAndGoToNextStep}>Upload</FileUpload>
+        <FileUploadLink onChoose={chooseAndGoToNextStep}>
+          Upload a photo
+        </FileUploadLink>
       </Buttons>
     </div>
   );

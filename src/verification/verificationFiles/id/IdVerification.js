@@ -4,10 +4,15 @@ import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import styled from 'styled-components';
-import { FileUpload, GradientHeading, Paragraph } from '../../../ui';
+import {
+  FileUpload,
+  GradientHeading,
+  Paragraph,
+  ParagraphSmall,
+} from '../../../ui';
 import { VERIFICATION_ADDRESS_VERIFICATION_ROUTE } from '../../constants';
-import passport from './img/passport.png';
 import verificationFileUploader from '../verificationFileUploader';
+import EUIcon from '../../icon/EUIcon';
 
 const CenterHeading = GradientHeading.extend`
   text-align: center;
@@ -16,14 +21,6 @@ const CenterHeading = GradientHeading.extend`
 const Buttons = styled.div`
   display: flex;
   justify-content: space-between;
-`;
-
-const PassportImg = styled.img`
-  max-height: 220px;
-  max-width: 280px;
-  margin-top: 36px;
-  margin-left: auto;
-  margin-right: auto;
 `;
 
 type Props = {
@@ -40,16 +37,19 @@ export const IdVerification = ({ onChoose, redirectToNextStep }: Props) => {
   return (
     <div>
       <CenterHeading>Your photo for identification</CenterHeading>
-      <Paragraph alt>
-        To verify your identity please upload a photo (less than 10MB) of your
-        id card or passport identification page.
+      <Paragraph center>
+        Take a photo or upload a photo from a library so we know who you are.
       </Paragraph>
-      <PassportImg src={passport} />
+      <ParagraphSmall center>
+        The protection of your personal details is of utmost importance to us.
+        We will always prioritize the security of our users. Change is a
+        regulated and licensed EU entity.
+      </ParagraphSmall>
+      <EUIcon />
       <Buttons>
         <FileUpload type="camera" onChoose={chooseAndGoToNextStep}>
           Camera
         </FileUpload>
-        <FileUpload onChoose={chooseAndGoToNextStep}>Upload</FileUpload>
       </Buttons>
     </div>
   );

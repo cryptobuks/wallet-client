@@ -10,7 +10,7 @@ import {
   beforeEach,
   it,
 } from '../../../.storybook/facade';
-import FileUpload from './FileUpload';
+import { FileUpload } from './FileUpload';
 
 storiesOf('Controls', module).add('File Upload', () => {
   specs(() =>

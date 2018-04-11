@@ -10,6 +10,7 @@ import {
   GradientHeading,
   Link,
   Paragraph,
+  ParagraphSmall,
   Top,
 } from '../../ui';
 import variables from '../../ui/variables';
@@ -18,21 +19,20 @@ import { VERIFICATION_PROFILE_ROUTE } from '../constants';
 import addressLogo from './img/address_logo.png';
 import idLogo from './img/id_logo.png';
 import selfieLogo from './img/selfie_logo.png';
+import EUIcon from '../icon/EUIcon';
 
 const StyledHeading = GradientHeading.extend`
   text-align: center;
 `;
 
 const CenteredParagraph = Paragraph.extend`
-  font-family: OpenSansSemibold, Fallback, sans-serif;
   text-align: center;
   margin-top: 11px;
 `;
 
-const CenteredParagraphSmall = CenteredParagraph.extend`
+const CenteredParagraphSmall = ParagraphSmall.extend`
+  text-align: center;
   max-width: 285px;
-  font-size: ${variables.fontSizeTiny};
-  color: #a8a5a5;
 `;
 
 const IconList = styled.div`
@@ -92,6 +92,7 @@ export const Intro = (props: Props) =>
         The service is currently available for the European Economic Area
         citizens only.
       </CenteredParagraphSmall>
+      <EUIcon />
       <CenteredParagraph>
         <Link to={VERIFICATION_PROFILE_ROUTE}>
           <GradientButton inline>Next</GradientButton>
