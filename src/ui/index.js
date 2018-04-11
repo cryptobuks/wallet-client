@@ -18,7 +18,6 @@ export * from './theme';
 export * from './tabs';
 export * from './progress';
 export * from './slider';
-export { default as NavigationDots } from './navigationDots';
 export { default as FileUpload } from './upload';
 export { default as Modal } from './modal';
 export { default as Notification } from './notification';
