@@ -6,6 +6,8 @@ const getActiveWalletId = state => state.wallet.activeId;
 
 const getWallets = state => state.wallet.wallets;
 
+const getCurrency = state => state.wallet.currency;
+
 export const getActiveWallet: Selector<*, *, ?Wallet> = createSelector(
   [getWallets, getActiveWalletId],
   (wallets: Array<WalletType>, activeWalletId: ?number): ?Wallet => {
@@ -20,6 +22,27 @@ export const getActiveWallet: Selector<*, *, ?Wallet> = createSelector(
     }
     return null;
   },
+);
+
+function getWalletBalances(wallets: Array<WalletType>, currency: string) {
+  return wallets.map((wallet: WalletType) =>
+    new Wallet(wallet).getRepresentationalBalance(currency),
+  );
+}
+
+function getBalance(wallets: Array<WalletType>, currency: string): number {
+  const walletBalances = getWalletBalances(wallets, currency);
+  return Number(
+    walletBalances
+      .reduce((balance1, balance2) => balance1 + balance2, 0)
+      .toFixed(2),
+  );
+}
+
+export const getTotalBalance: Selector<*, *, number> = createSelector(
+  [getWallets, getCurrency],
+  (wallets: Array<WalletType>, currency: string): number =>
+    getBalance(wallets, currency),
 );
 
 export default { getActiveWallet };

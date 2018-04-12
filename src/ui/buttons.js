@@ -24,7 +24,6 @@ export const GradientButton = styled(ButtonBase)`
     ${variables.colorGreenBright}
   );
   padding: 0 2em 0 2em;
-  box-shadow: 0 2px 6px 0 rgba(2, 189, 165, 0.4);
   height: 52px;
   min-width: 140px;
   margin: 0 auto;

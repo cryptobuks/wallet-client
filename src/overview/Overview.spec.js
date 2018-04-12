@@ -1,32 +1,48 @@
 // @flow
 
-import { shallow } from 'enzyme';
 import React from 'react';
-import { Overview } from './Overview';
-import BalanceDoughnut from './balance/doughnut';
-import BalanceTable from './balance/table';
+import { shallow } from 'enzyme';
+import { Overview, type Props, StyledGradientHeading } from './Overview';
 import VerificationButton from './verificationButton';
+import MarketPortfolioSlider from './slider';
+import MarketRateTable from './marketRates';
 
 describe('Overview component', () => {
   let component;
 
+  const props: Props = {
+    isVerified: false,
+    balance: 0,
+  };
+
   beforeEach(() => {
-    component = shallow(<Overview />);
+    component = shallow(<Overview {...props} />);
   });
 
   it('renders the component', () => {
     expect(component);
   });
 
-  it('renders the balance doughnut', () => {
-    expect(component.find(BalanceDoughnut).length).toEqual(1);
+  it('renders real-time coin prices text for users with balance zero', () => {
+    const realTimeCoinPricesHeading = (
+      <StyledGradientHeading center>
+        Real-time coin prices
+      </StyledGradientHeading>
+    );
+
+    expect(component.contains(realTimeCoinPricesHeading)).toBe(true);
   });
 
-  it('renders the balance table', () => {
-    expect(component.find(BalanceTable).length).toEqual(1);
+  it('renders verification button for not verified users', () => {
+    expect(component.contains(<VerificationButton />)).toBe(true);
   });
 
-  it('renders the verification button table', () => {
-    expect(component.find(VerificationButton).length).toEqual(1);
+  it("renders market-portfolio slider for users whos's balance more than zero", () => {
+    component.setProps({ isVerified: true, balance: 560 });
+    expect(component.contains(<MarketPortfolioSlider />)).toBe(true);
+  });
+
+  it("renders market table for users whos's balance is zero", () => {
+    expect(component.contains(<MarketRateTable />)).toBe(true);
   });
 });

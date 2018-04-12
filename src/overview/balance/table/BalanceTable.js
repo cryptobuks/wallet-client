@@ -18,7 +18,11 @@ export type Props = {
   currency: string,
 };
 
-const Table = styled.table`
+export const Table = styled.table`
+  th:nth-child(1),
+  td:nth-child(1) {
+    text-align: left;
+  }
   th:nth-child(2),
   td:nth-child(2),
   th:nth-child(3),
@@ -32,6 +36,8 @@ export const TableHead = styled.thead`
     color: ${variables.colorNeutralLight} !important;
     border: 0 !important;
     padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
     line-height: 2.14;
     font-size: ${variables.fontSizeSmall};
   }
@@ -40,6 +46,10 @@ export const TableHead = styled.thead`
 export const TableBody = styled.tbody`
   tr {
     font-size: ${variables.fontSizeMedium};
+    td {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
   tr:nth-child(1) td {
     border: 0;

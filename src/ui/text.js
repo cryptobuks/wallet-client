@@ -13,17 +13,16 @@ const H1 = ({ center, ...props }: Props) => (
 );
 
 export const GradientHeading = styled(H1)`
-text-align: ${props => (props.center ? 'center' : 'left')};
+  text-align: ${props => (props.center ? 'center' : 'left')};
   background: linear-gradient(
     to right,
     ${variables.colorGreenLight},
     ${variables.colorBlue}
   );
   position: relative;
-  display:inline-block;
+  display: inline-block;
   font-family: ${variables.fontPrimaryExtraBold};
-  font-size: ${variables.fontSizeLargest};
-  fontSizeLargest;
+  font-size: 33px;
   font-weight: bold;
   line-height: 1;
   padding: 8px;
