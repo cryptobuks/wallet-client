@@ -12,7 +12,7 @@ import {
   FormGroup,
   GradientButton,
 } from '../../../../ui';
-import { VERIFICATION_ID_VERIFICATION_ROUTE } from '../../../constants';
+import { VERIFICATION_CHOOSE_ROUTE } from '../../../constants';
 import { addressFormSubmitHandler } from '../../addressRoutine';
 import { type Address, type AddressForm } from '../../addressState';
 
@@ -57,7 +57,7 @@ export const AddressReduxForm = ({ handleSubmit, error }: Props) => (
 const reduxAddressForm = reduxForm({
   form: 'cardAddress',
   onSubmitSuccess: (result, dispatch) => {
-    dispatch(push(VERIFICATION_ID_VERIFICATION_ROUTE));
+    dispatch(push(VERIFICATION_CHOOSE_ROUTE));
   },
 })(AddressReduxForm);
 

@@ -10,6 +10,8 @@ import {
   VERIFICATION_INTRO_ROUTE,
   VERIFICATION_PROFILE_ROUTE,
   VERIFICATION_ADDRESS_ROUTE,
+  VERIFICATION_CHOOSE_ROUTE,
+  VERIFICATION_PASSPORT_VERIFICATION_ROUTE,
   VERIFICATION_ID_VERIFICATION_ROUTE,
   VERIFICATION_ADDRESS_VERIFICATION_ROUTE,
   VERIFICATION_CONFIRM_ROUTE,
@@ -18,15 +20,19 @@ import {
 import Profile from './profile';
 import AddressComponent from './address/AddressComponent';
 import {
+  ChooseDocumentType,
   IdVerification,
+  PassportVerification,
   AddressVerification,
   SelfieVerification,
 } from './verificationFiles';
 import Confirm from './confirm';
 
+let key = 1;
+
 const introRoute = (
   <Route
-    key={1}
+    key={(key += 1)}
     exact
     path={VERIFICATION_INTRO_ROUTE}
     component={appWrapper(requireAuthentication(verificationFlow(Intro)))}
@@ -35,7 +41,7 @@ const introRoute = (
 
 const profileRoute = (
   <Route
-    key={1}
+    key={(key += 1)}
     exact
     path={VERIFICATION_PROFILE_ROUTE}
     component={appWrapper(requireAuthentication(verificationFlow(Profile)))}
@@ -44,7 +50,7 @@ const profileRoute = (
 
 const addressRoute = (
   <Route
-    key={2}
+    key={(key += 1)}
     path={VERIFICATION_ADDRESS_ROUTE}
     component={appWrapper(
       requireAuthentication(verificationFlow(AddressComponent)),
@@ -52,9 +58,29 @@ const addressRoute = (
   />
 );
 
+const chooseVerificationRoute = (
+  <Route
+    key={(key += 1)}
+    path={VERIFICATION_CHOOSE_ROUTE}
+    component={appWrapper(
+      requireAuthentication(verificationFlow(ChooseDocumentType)),
+    )}
+  />
+);
+
+const passportVerificationRoute = (
+  <Route
+    key={(key += 1)}
+    path={VERIFICATION_PASSPORT_VERIFICATION_ROUTE}
+    component={appWrapper(
+      requireAuthentication(verificationFlow(PassportVerification)),
+    )}
+  />
+);
+
 const idVerificationRoute = (
   <Route
-    key={2}
+    key={(key += 1)}
     path={VERIFICATION_ID_VERIFICATION_ROUTE}
     component={appWrapper(
       requireAuthentication(verificationFlow(IdVerification)),
@@ -64,7 +90,7 @@ const idVerificationRoute = (
 
 const addressVerificationRoute = (
   <Route
-    key={3}
+    key={(key += 1)}
     path={VERIFICATION_ADDRESS_VERIFICATION_ROUTE}
     component={appWrapper(
       requireAuthentication(verificationFlow(AddressVerification)),
@@ -74,7 +100,7 @@ const addressVerificationRoute = (
 
 const selfieVerificationRoute = (
   <Route
-    key={4}
+    key={(key += 1)}
     path={VERIFICATION_SELFIE_VERIFICATION_ROUTE}
     component={appWrapper(
       requireAuthentication(verificationFlow(SelfieVerification)),
@@ -84,7 +110,7 @@ const selfieVerificationRoute = (
 
 const confirmRoute = (
   <Route
-    key={5}
+    key={(key += 1)}
     path={VERIFICATION_CONFIRM_ROUTE}
     component={appWrapper(requireAuthentication(verificationFlow(Confirm)))}
   />
@@ -94,6 +120,8 @@ export default [
   introRoute,
   profileRoute,
   addressRoute,
+  chooseVerificationRoute,
+  passportVerificationRoute,
   idVerificationRoute,
   addressVerificationRoute,
   selfieVerificationRoute,

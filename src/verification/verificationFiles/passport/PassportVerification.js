@@ -3,13 +3,13 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
-import styled from 'styled-components';
 import {
   BackLink,
   FileUpload,
   GradientHeading,
   Paragraph,
   ParagraphSmall,
+  RowFlex,
 } from '../../../ui';
 import {
   VERIFICATION_CHOOSE_ROUTE,
@@ -18,8 +18,7 @@ import {
 import verificationFileUploader from '../verificationFileUploader';
 import EUIcon from '../../icon/EUIcon';
 
-const Buttons = styled.div`
-  display: flex;
+const Buttons = RowFlex.extend`
   justify-content: space-between;
 `;
 
@@ -28,7 +27,10 @@ type Props = {
   redirectToNextStep: () => void,
 };
 
-export const IdVerification = ({ onChoose, redirectToNextStep }: Props) => {
+export const PassportVerification = ({
+  onChoose,
+  redirectToNextStep,
+}: Props) => {
   const chooseAndGoToNextStep = (fileList: FileList) => {
     onChoose(fileList);
     redirectToNextStep();
@@ -37,9 +39,9 @@ export const IdVerification = ({ onChoose, redirectToNextStep }: Props) => {
   return (
     <div>
       <BackLink to={VERIFICATION_CHOOSE_ROUTE} />
-      <GradientHeading center>Photo of your ID document</GradientHeading>
+      <GradientHeading center>Photo of your passport</GradientHeading>
       <Paragraph center>
-        A clear photo of your ID document. Not a picture of yourself.
+        A clear photo of a valid passport. Not a picture of yourself.
       </Paragraph>
       <ParagraphSmall center>
         The protection of your personal details is of utmost importance to us.
@@ -64,12 +66,12 @@ const mapDispatchToProps = dispatch =>
     dispatch,
   );
 
-IdVerification.displayName = 'IdVerification';
+PassportVerification.displayName = 'PassportVerification';
 
-const component = connect(null, mapDispatchToProps)(IdVerification);
-const IdVerificationWithFileUploader = verificationFileUploader(
+const component = connect(null, mapDispatchToProps)(PassportVerification);
+const PassportVerificationWithFileUploader = verificationFileUploader(
   component,
   'PASSPORT',
 );
-IdVerificationWithFileUploader.displayName = 'IdVerification';
-export default IdVerificationWithFileUploader;
+PassportVerificationWithFileUploader.displayName = 'PassportVerification';
+export default PassportVerificationWithFileUploader;

@@ -6,9 +6,7 @@ import AddressSuggest from './AddressSuggest';
 import AddressForm from './AddressForm';
 import withAddress from '../withAddress';
 import { type Address } from '../addressState';
-import {
-  VERIFICATION_PROFILE_ROUTE,
-} from '../../constants';
+import { VERIFICATION_PROFILE_ROUTE } from '../../constants';
 import { BackLink } from '../../../ui';
 
 type Props = {
