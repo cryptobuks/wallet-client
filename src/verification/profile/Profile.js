@@ -15,10 +15,14 @@ import {
   FormRow,
   Label,
   GradientButton,
+  BackLink,
 } from '../../ui';
 import { PhoneField } from './phoneField';
 import { profileFormSubmitHandler, withProfile } from '../../user/profile';
-import { VERIFICATION_ADDRESS_ROUTE } from '../constants';
+import {
+  VERIFICATION_ADDRESS_ROUTE,
+  VERIFICATION_INTRO_ROUTE,
+} from '../constants';
 
 type Props = {} & FormProps;
 
@@ -32,6 +36,7 @@ const FormGroupCenter = styled(FormGroup)`
 
 export const Profile = ({ handleSubmit, error }: Props) => (
   <div>
+    <BackLink to={VERIFICATION_INTRO_ROUTE} />
     <FormWithoutMargin
       id="profileForm"
       onSubmit={handleSubmit(profileFormSubmitHandler)}

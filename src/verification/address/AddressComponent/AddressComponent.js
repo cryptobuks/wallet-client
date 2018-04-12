@@ -6,6 +6,10 @@ import AddressSuggest from './AddressSuggest';
 import AddressForm from './AddressForm';
 import withAddress from '../withAddress';
 import { type Address } from '../addressState';
+import {
+  VERIFICATION_PROFILE_ROUTE,
+} from '../../constants';
+import { BackLink } from '../../../ui';
 
 type Props = {
   address: Address,
@@ -35,6 +39,7 @@ export const AddressComponent = class AddressComponent extends Component<
 
     return (
       <div>
+        <BackLink to={VERIFICATION_PROFILE_ROUTE} />
         {showFullForm ? (
           <AddressForm />
         ) : (

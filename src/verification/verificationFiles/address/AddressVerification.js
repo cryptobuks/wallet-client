@@ -6,13 +6,17 @@ import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import styled from 'styled-components';
 import {
+  BackLink,
   FileUpload,
   FileUploadLink,
   Heading,
   Paragraph,
   ParagraphSmall,
 } from '../../../ui';
-import { VERIFICATION_SELFIE_VERIFICATION_ROUTE } from '../../constants';
+import {
+  VERIFICATION_CHOOSE_ROUTE,
+  VERIFICATION_SELFIE_VERIFICATION_ROUTE,
+} from '../../constants';
 import verificationFileUploader from '../verificationFileUploader';
 import EUIcon from '../../icon/EUIcon';
 
@@ -47,6 +51,7 @@ export const AddressVerification = ({
 
   return (
     <div>
+      <BackLink to={VERIFICATION_CHOOSE_ROUTE} />
       <LargeHeading center>Photo of proof of address</LargeHeading>
       <Paragraph center>
         A utility bill or credit card statement from the last 3 months sent to

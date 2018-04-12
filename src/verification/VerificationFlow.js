@@ -3,17 +3,8 @@ import type { MapStateToProps } from 'react-redux';
 import { connect } from 'react-redux';
 import React from 'react';
 import styled from 'styled-components';
-import { BackLink, Progress, WrappedContent } from '../ui';
-import {
-  VERIFICATION_INTRO_ROUTE,
-  VERIFICATION_PROFILE_ROUTE,
-  VERIFICATION_ADDRESS_ROUTE,
-  VERIFICATION_ID_VERIFICATION_ROUTE,
-  VERIFICATION_ADDRESS_VERIFICATION_ROUTE,
-  VERIFICATION_SELFIE_VERIFICATION_ROUTE,
-} from './constants';
+import { Progress, WrappedContent } from '../ui';
 import VerificationProgress from './VerificationProgress';
-import { routes } from '../router';
 
 const Container = styled.div`
   background-color: white;
@@ -36,15 +27,6 @@ const stepComponents = [
   'Confirm',
 ];
 
-const backButtonRoutes = [
-  VERIFICATION_INTRO_ROUTE,
-  VERIFICATION_PROFILE_ROUTE,
-  VERIFICATION_ADDRESS_ROUTE,
-  VERIFICATION_ID_VERIFICATION_ROUTE,
-  VERIFICATION_ADDRESS_VERIFICATION_ROUTE,
-  VERIFICATION_SELFIE_VERIFICATION_ROUTE,
-];
-
 const getActiveStepIndex = (WrappedComponent: *): number => {
   return stepComponents.findIndex(component => {
     if (WrappedComponent.displayName) {
@@ -64,9 +46,6 @@ export const verificationFlow = (WrappedComponent: *) => {
     return (
       <Container>
         {props.progress && <Progress />}
-        {(activeIndex > 0 && (
-          <BackLink id="back-link" to={backButtonRoutes[activeIndex - 1]} />
-        )) || <BackLink to={routes.BASE} />}
         <ProgressContainer>
           <VerificationProgress total={count} current={activeIndex + 1} />
         </ProgressContainer>
