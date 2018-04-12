@@ -8,6 +8,7 @@ const LOGOUT = '/logout';
 const RESET_PASSWORD = '/reset-password';
 const RESET_PASSWORD_DONE = '/reset-password-done';
 const UPDATE_PASSWORD = '/update-password/:verificationToken';
+const EXCHANGE = '/exchange';
 const DEFAULT_ON_ENTER = OVERVIEW;
 
 export default {
@@ -19,5 +20,6 @@ export default {
   RESET_PASSWORD,
   RESET_PASSWORD_DONE,
   UPDATE_PASSWORD,
+  EXCHANGE,
   DEFAULT_ON_ENTER,
 };

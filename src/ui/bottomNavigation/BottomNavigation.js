@@ -36,7 +36,7 @@ const Icon = withStyles(iconStyles)(({ item, classes }: IconProps): any => {
   switch (item) {
     case '/overview':
       return <DashboardIcon classes={{ root: classes.root }} />;
-    case '/wallet':
+    case '/exchange':
       return <ConversionIcon classes={{ root: classes.root }} />;
     case '/card':
       return <CardIcon classes={{ root: classes.root }} />;
@@ -72,7 +72,7 @@ const buttonStyles = {
   overview: {
     color: 'black !important',
   },
-  wallet: {
+  exchange: {
     color: 'black !important',
   },
   card: {
