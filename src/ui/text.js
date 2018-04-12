@@ -26,7 +26,7 @@ export const GradientHeading = styled(H1)`
   font-weight: bold;
   line-height: 1;
   padding: 8px;
-  letter-spacing: -3px;
+  letter-spacing: -1.8px;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `;
