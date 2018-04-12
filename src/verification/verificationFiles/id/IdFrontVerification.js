@@ -13,7 +13,7 @@ import {
 } from '../../../ui';
 import {
   VERIFICATION_CHOOSE_ROUTE,
-  VERIFICATION_ADDRESS_VERIFICATION_ROUTE,
+  VERIFICATION_ID_BACK_VERIFICATION_ROUTE,
 } from '../../constants';
 import verificationFileUploader from '../verificationFileUploader';
 import EUIcon from '../../icon/EUIcon';
@@ -28,7 +28,10 @@ type Props = {
   redirectToNextStep: () => void,
 };
 
-export const IdVerification = ({ onChoose, redirectToNextStep }: Props) => {
+export const IdFrontVerification = ({
+  onChoose,
+  redirectToNextStep,
+}: Props) => {
   const chooseAndGoToNextStep = (fileList: FileList) => {
     onChoose(fileList);
     redirectToNextStep();
@@ -37,7 +40,9 @@ export const IdVerification = ({ onChoose, redirectToNextStep }: Props) => {
   return (
     <div>
       <BackLink to={VERIFICATION_CHOOSE_ROUTE} />
-      <GradientHeading center>Photo of your ID document</GradientHeading>
+      <GradientHeading center>
+        Photo of the front side of your ID document
+      </GradientHeading>
       <Paragraph center>
         A clear photo of your ID document. Not a picture of yourself.
       </Paragraph>
@@ -59,17 +64,17 @@ export const IdVerification = ({ onChoose, redirectToNextStep }: Props) => {
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      redirectToNextStep: () => push(VERIFICATION_ADDRESS_VERIFICATION_ROUTE),
+      redirectToNextStep: () => push(VERIFICATION_ID_BACK_VERIFICATION_ROUTE),
     },
     dispatch,
   );
 
-IdVerification.displayName = 'IdVerification';
+IdFrontVerification.displayName = 'IdVerification';
 
-const component = connect(null, mapDispatchToProps)(IdVerification);
-const IdVerificationWithFileUploader = verificationFileUploader(
+const component = connect(null, mapDispatchToProps)(IdFrontVerification);
+const IdFrontVerificationWithFileUploader = verificationFileUploader(
   component,
-  'PASSPORT',
+  'ID_CARD_FRONT',
 );
-IdVerificationWithFileUploader.displayName = 'IdVerification';
-export default IdVerificationWithFileUploader;
+IdFrontVerificationWithFileUploader.displayName = 'IdFrontVerification';
+export default IdFrontVerificationWithFileUploader;
