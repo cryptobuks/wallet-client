@@ -5,10 +5,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import styled from 'styled-components';
-import { Heading, Paragraph, PrimaryButton } from '../../../ui';
-import { VERIFICATION_CONFIRM_ROUTE } from '../../constants';
+import {
+  BackLink,
+  Heading,
+  Paragraph,
+  ParagraphSmall,
+  PrimaryButton,
+} from '../../../ui';
+import {
+  VERIFICATION_ADDRESS_VERIFICATION_ROUTE,
+  VERIFICATION_CONFIRM_ROUTE,
+} from '../../constants';
 import { type VerificationFileBase64 } from '../verificationFilesApi';
 import { verificationPostRoutine } from '../verificationRoutine';
+import { EUIcon } from '../../icon/EUIcon';
 
 export type Props = {
   postVerification: VerificationFileBase64 => void,
@@ -40,8 +50,16 @@ export class SelfieVerification extends Component<Props> {
   render() {
     return (
       <div>
-        <LargeHeading center>Your facial similarity check</LargeHeading>
-        <Paragraph>Please take a self-portrait of yourself.</Paragraph>
+        <BackLink to={VERIFICATION_ADDRESS_VERIFICATION_ROUTE} />
+        <LargeHeading center>Your photo for identification</LargeHeading>
+        <Paragraph center>
+          Take a photo or upload a photo from a library so we know who you are.
+        </Paragraph>
+        <ParagraphSmall center>
+          The protection of your personal details is of utmost importance to us.
+          We will always prioritize the security of our users. Change is a
+          regulated and licensed EU entity.
+        </ParagraphSmall>
         <WebcamContainer>
           <Webcam
             audio={false}
@@ -51,6 +69,7 @@ export class SelfieVerification extends Component<Props> {
             width={300}
           />
         </WebcamContainer>
+        <EUIcon />
         <PrimaryButton className="mt-4" onClick={this.capture}>
           Capture photo
         </PrimaryButton>

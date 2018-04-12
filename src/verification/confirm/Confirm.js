@@ -3,10 +3,17 @@ import React from 'react';
 import type { MapStateToProps } from 'react-redux';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { Heading, Paragraph, ParagraphSmall, PrimaryButton } from '../../ui';
+import {
+  BackLink,
+  Heading,
+  Paragraph,
+  ParagraphSmall,
+  PrimaryButton,
+} from '../../ui';
 import { FormFeedback } from '../../ui/form';
 import confirmRoutine from './confirmRoutine';
 import EUIcon from '../icon/EUIcon';
+import { VERIFICATION_SELFIE_VERIFICATION_ROUTE } from '../constants';
 
 const StyledHeading = styled(Heading)`
   margin-bottom: 50px;
@@ -25,6 +32,7 @@ type Props = {
 
 export const Confirm = ({ confirm, error }: Props) => (
   <div>
+    <BackLink to={VERIFICATION_SELFIE_VERIFICATION_ROUTE} />
     <StyledHeading center>We will go over your documents</StyledHeading>
     {error && <FormFeedback>{error}</FormFeedback>}
     <Paragraph center>

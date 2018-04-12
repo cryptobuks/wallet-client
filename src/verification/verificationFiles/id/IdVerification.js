@@ -5,12 +5,16 @@ import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import styled from 'styled-components';
 import {
+  BackLink,
   FileUpload,
   GradientHeading,
   Paragraph,
   ParagraphSmall,
 } from '../../../ui';
-import { VERIFICATION_ADDRESS_VERIFICATION_ROUTE } from '../../constants';
+import {
+  VERIFICATION_CHOOSE_ROUTE,
+  VERIFICATION_ADDRESS_VERIFICATION_ROUTE,
+} from '../../constants';
 import verificationFileUploader from '../verificationFileUploader';
 import EUIcon from '../../icon/EUIcon';
 
@@ -37,6 +41,7 @@ export const IdVerification = ({ onChoose, redirectToNextStep }: Props) => {
   return (
     <div>
       <CenterHeading>Your photo for identification</CenterHeading>
+      <BackLink to={VERIFICATION_CHOOSE_ROUTE} />
       <Paragraph center>
         Take a photo or upload a photo from a library so we know who you are.
       </Paragraph>
