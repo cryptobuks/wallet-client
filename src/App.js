@@ -2,17 +2,17 @@
 
 import React from 'react';
 import type { MapStateToProps } from 'react-redux';
-import styled from 'styled-components';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
 import AppRouter from './router';
 import {
   Button,
+  Heading,
   Link,
+  Paragraph,
   PrimaryButton,
   Top,
   WrappedContent,
-  Heading,
-  Paragraph,
 } from './ui';
 import moon from './img/moon.png';
 import rocket from './img/rocket.png';
@@ -22,20 +22,22 @@ const Content = styled.div`
 `;
 
 const StyledContent = WrappedContent.extend`
-  background-image: url(${moon});
-  background-repeat: no-repeat;
-  background-position: -160px 20px;
+  background: url(${moon}) no-repeat -160px 20px;
   background-color: inherit;
   background-size: cover;
-  justify-content: space-between;
-  padding: 5vh 5vw 0 5vw;
+  padding-bottom: 0;
 `;
 
 const RocketContainer = styled.div`
+  height: 100%;
+  width: 100%;
+  margin: auto;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
   & img {
-    height: 40vh;
+    max-height: 60%;
   }
 `;
 
