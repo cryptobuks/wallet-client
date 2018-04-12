@@ -9,6 +9,7 @@ import { getTotalBalance } from '../redux/selectors';
 import VerificationButton from './verificationButton';
 import { MarketPortfolioSlider } from './slider';
 import { withUser } from '../user';
+import withWallet from '../wallet/withWallet';
 import { MarketRateTable } from './marketRates';
 
 const BalanceCard = Card.extend`
@@ -56,7 +57,7 @@ export type Props = {
 export const Overview = ({ isVerified, balance }: Props) => (
   <div>
     {balance === 0 && realTimeCoinPricesText}
-    {!isVerified && verificationButton}
+    {isVerified != null && !isVerified && verificationButton}
     {isVerified && balance > 0 && marketPortfolioSlider}
     {balance === 0 && marketRateTable}
   </div>
@@ -67,4 +68,4 @@ const mapStateToProps: MapStateToProps<*, Props, *> = state => ({
   balance: getTotalBalance(state),
 });
 
-export default withUser(connect(mapStateToProps)(Overview));
+export default withWallet(withUser(connect(mapStateToProps)(Overview)));

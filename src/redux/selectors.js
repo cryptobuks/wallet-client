@@ -41,8 +41,12 @@ function getBalance(wallets: Array<WalletType>, currency: string): number {
 
 export const getTotalBalance: Selector<*, *, number> = createSelector(
   [getWallets, getCurrency],
-  (wallets: Array<WalletType>, currency: string): number =>
-    getBalance(wallets, currency),
+  (wallets: Array<WalletType>, currency: string): number => {
+    if (wallets.length) {
+      return getBalance(wallets, currency);
+    }
+    return -1;
+  },
 );
 
 export default { getActiveWallet };
