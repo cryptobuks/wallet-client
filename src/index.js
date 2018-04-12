@@ -33,6 +33,7 @@ import verificationRoutes from './verification/routes';
 import ResetPassword, { ResetPasswordDone } from './user/password/reset';
 import UpdatePassword from './user/password/update';
 import Verification from './verification/Verification';
+import { Exchange } from './exchange/Exchange';
 
 const animationEnter = keyframes`${slideInRight}`;
 
@@ -93,6 +94,10 @@ const startApp = () => {
                   <Route
                     path={routes.WALLET}
                     component={appWrapper(authenticatedPage(Wallet))}
+                  />
+                  <Route
+                    path={routes.EXCHANGE}
+                    component={appWrapper(authenticatedPage(Exchange))}
                   />
                   <Route
                     path="/send"
