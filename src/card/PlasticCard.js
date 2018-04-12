@@ -8,8 +8,8 @@ import variables from '../ui/variables';
 const Container = styled.div`
   position: relative;
   display: inline-block;
-  width: 320px;
-  height: 200px;
+  width: 290px;
+  height: 181.25px;
   background: linear-gradient(
     to right,
     ${variables.colorGreenLight},
