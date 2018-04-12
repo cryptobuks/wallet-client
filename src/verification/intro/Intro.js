@@ -4,8 +4,9 @@ import React from 'react';
 import type { MapStateToProps } from 'react-redux';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import AppRouter from '../../router';
+import AppRouter, { routes } from '../../router';
 import {
+  BackLink,
   GradientButton,
   GradientHeading,
   Link,
@@ -21,23 +22,14 @@ import idLogo from './img/id_logo.png';
 import selfieLogo from './img/selfie_logo.png';
 import EUIcon from '../icon/EUIcon';
 
-const StyledHeading = GradientHeading.extend`
-  text-align: center;
-`;
-
-const CenteredParagraph = Paragraph.extend`
-  text-align: center;
+const StyledParagraph = Paragraph.extend`
   margin-top: 11px;
-`;
-
-const CenteredParagraphSmall = ParagraphSmall.extend`
-  text-align: center;
-  max-width: 285px;
 `;
 
 const IconList = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
 
   & p {
     font-size: ${variables.fontSizeTiny};
@@ -66,14 +58,15 @@ export const Intro = (props: Props) =>
     <AppRouter defaultOnEnter />
   ) : (
     <div>
+      <BackLink to={routes.BASE} />
       <Top>
-        <StyledHeading>Before we get started ...</StyledHeading>
+        <GradientHeading center>Before we get started ...</GradientHeading>
       </Top>
-      <CenteredParagraph>
+      <StyledParagraph center>
         Change is a regulated EU entity, so we need to know who you are before
         you can make your first purchase.
-      </CenteredParagraph>
-      <CenteredParagraph>Be ready to</CenteredParagraph>
+      </StyledParagraph>
+      <StyledParagraph center>Be ready to</StyledParagraph>
       <IconList>
         <div>
           <Logo alt="ID icon" src={idLogo} />
@@ -88,16 +81,16 @@ export const Intro = (props: Props) =>
           <LogoParagraph>Take a self-portrait</LogoParagraph>
         </div>
       </IconList>
-      <CenteredParagraphSmall>
+      <ParagraphSmall center>
         The service is currently available for the European Economic Area
         citizens only.
-      </CenteredParagraphSmall>
+      </ParagraphSmall>
       <EUIcon />
-      <CenteredParagraph>
+      <StyledParagraph center>
         <Link to={VERIFICATION_PROFILE_ROUTE}>
           <GradientButton inline>Next</GradientButton>
         </Link>
-      </CenteredParagraph>
+      </StyledParagraph>
     </div>
   );
 

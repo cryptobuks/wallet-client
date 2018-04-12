@@ -21,6 +21,8 @@ const stepComponents = [
   'Intro',
   'Profile',
   'AddressComponent',
+  'ChooseDocumentType',
+  'PassportVerification',
   'IdVerification',
   'AddressVerification',
   'SelfieVerification',
