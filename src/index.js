@@ -15,7 +15,7 @@ import './polyfills';
 import './initialize';
 import appWrapper from './appWrapper';
 import { history, store } from './redux/reduxStore';
-import App from './App';
+import App from './app/App';
 import { Wallet, Send, Receive } from './wallet';
 import { Signup } from './signup';
 import { Login, Logout } from './login';
