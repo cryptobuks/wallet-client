@@ -27,17 +27,15 @@ const StyledContent = WrappedContent.extend`
   background-position: -160px 20px;
   background-color: inherit;
   background-size: cover;
+  justify-content: space-between;
+  padding: 5vh 5vw 0 5vw;
 `;
 
 const RocketContainer = styled.div`
   display: flex;
-  position: absolute;
-  bottom: -40px;
-  left: 0;
-  right: 0;
-
+  justify-content: center;
   & img {
-    margin: auto;
+    height: 40vh;
   }
 `;
 
