@@ -14,7 +14,7 @@ import {
 } from '../../../ui';
 import variables from '../../../ui/variables';
 import {
-  VERIFICATION_ID_VERIFICATION_ROUTE,
+  VERIFICATION_ID_FRONT_VERIFICATION_ROUTE,
   VERIFICATION_PASSPORT_VERIFICATION_ROUTE,
   VERIFICATION_ADDRESS_ROUTE,
 } from '../../constants';
@@ -81,6 +81,7 @@ export const ChooseDocumentTypeInternal = withDocumentType(
                 type="radio"
                 id="passport"
                 name="documentType"
+                checked={documentType === PASSPORT}
                 onChange={_ => setDocumentType(_ => PASSPORT)}
               />
               Passport
@@ -92,6 +93,7 @@ export const ChooseDocumentTypeInternal = withDocumentType(
                 type="radio"
                 id="idcard"
                 name="documentType"
+                checked={documentType === ID}
                 onChange={_ => setDocumentType(_ => ID)}
               />
               National Identity Card
@@ -111,7 +113,7 @@ export const ChooseDocumentTypeInternal = withDocumentType(
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      redirectToID: () => push(VERIFICATION_ID_VERIFICATION_ROUTE),
+      redirectToID: () => push(VERIFICATION_ID_FRONT_VERIFICATION_ROUTE),
       redirectToPassport: () => push(VERIFICATION_PASSPORT_VERIFICATION_ROUTE),
     },
     dispatch,

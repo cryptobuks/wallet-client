@@ -9,15 +9,17 @@ import {
   specs,
   storiesOf,
 } from '../../../../.storybook/facade';
-import { ChooseDocumentType } from './ChooseDocumentType';
+import { ChooseDocumentTypeInternal as ChooseDocumentType } from './ChooseDocumentType';
 
 storiesOf('Page', module).add('Choose document type', () => {
   specs(() =>
-    describe('ID Verification', () => {
+    describe('Choose document type', () => {
       let component;
 
+      let props = {};
+
       beforeEach(() => {
-        component = shallow(<ChooseDocumentType />);
+        component = shallow(<ChooseDocumentType {...props} />);
       });
       it('renders choose document type component', () => {
         expect(component);

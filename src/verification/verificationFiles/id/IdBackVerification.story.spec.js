@@ -11,11 +11,11 @@ import {
   beforeEach,
   it,
 } from '../../../../.storybook/facade';
-import { IdVerification } from './IdVerification';
+import { IdBackVerification } from './IdBackVerification';
 
-storiesOf('Page', module).add('ID Verification', () => {
+storiesOf('Page', module).add('ID Back Verification', () => {
   specs(() =>
-    describe('ID Verification', () => {
+    describe('ID Back Verification', () => {
       let component;
 
       const props = {
@@ -24,7 +24,7 @@ storiesOf('Page', module).add('ID Verification', () => {
       };
 
       beforeEach(() => {
-        component = shallow(<IdVerification {...props} />);
+        component = shallow(<IdBackVerification {...props} />);
       });
       it('renders id verification component', () => {
         expect(component);
@@ -33,7 +33,7 @@ storiesOf('Page', module).add('ID Verification', () => {
   );
 
   return (
-    <IdVerification
+    <IdBackVerification
       onChoose={action('file chosen')}
       redirectToNextStep={action('redirecting to next step')}
     />
