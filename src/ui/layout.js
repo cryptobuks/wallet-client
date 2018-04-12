@@ -3,12 +3,33 @@ import React from 'react';
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 
-export const Content = styled.div`
-  background-color: white;
+export const ColumnFlex = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+export const RowFlex = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const ColumnFlexCenter = ColumnFlex.extend`
+  justify-content: center;
+  align-items: center;
+`;
+
+export const RowFlexCenter = RowFlex.extend`
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Viewport = ColumnFlex.extend`
   height: 100vh;
   width: 100vw;
+`;
+
+export const Content = Viewport.extend`
+  background-color: white;
   overflow: scroll;
   ${breakpoint('landscape')`
      width: unset;
@@ -28,7 +49,7 @@ export const Top = styled.div`
   }
 `;
 
-export const Bottom = styled.div`
+export const Bottom = ColumnFlex.extend`
   margin-top: auto;
   width: 100%;
   height: 100%;
@@ -63,5 +84,3 @@ export const Divider = styled(EmptyDiv)`
   height: ${props => (props.small ? '1px' : '6px')};
   background-color: #f2f2f2;
 `;
-
-export default { Content, WrappedContent, Top, Bottom, Card, Divider };
