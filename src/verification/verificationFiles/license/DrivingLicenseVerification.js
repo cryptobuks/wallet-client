@@ -71,7 +71,7 @@ DrivingLicenseVerification.displayName = 'DrivingLicenseVerification';
 const component = connect(null, mapDispatchToProps)(DrivingLicenseVerification);
 const DrivingLicenseVerificationWithFileUploader = verificationFileUploader(
   component,
-  'DRIVERS_LICENSE',
+  'DRIVERS_LICENCE',
 );
 DrivingLicenseVerificationWithFileUploader.displayName =
   'DrivingLicenseVerification';
