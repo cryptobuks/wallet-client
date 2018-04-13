@@ -17,6 +17,7 @@ import {
   VERIFICATION_ID_FRONT_VERIFICATION_ROUTE,
   VERIFICATION_PASSPORT_VERIFICATION_ROUTE,
   VERIFICATION_ADDRESS_ROUTE,
+  VERIFICATION_DRIVING_LICENSE_VERIFICATION_ROUTE,
 } from '../../constants';
 
 const StyledHeading = Heading.extend`
@@ -46,6 +47,7 @@ const RadioContainer = Paragraph.extend`
 
 const PASSPORT = 'passport';
 const ID = 'id';
+const DRIVING_LICENSE = 'drivingLicense';
 
 const withDocumentType = withState('documentType', 'setDocumentType', PASSPORT);
 
@@ -54,6 +56,7 @@ type Props = {
   setDocumentType: ((string) => string) => void,
   redirectToID: () => void,
   redirectToPassport: () => void,
+  redirectToDrivingLicense: () => void,
 };
 
 export const ChooseDocumentTypeInternal = withDocumentType(
@@ -62,12 +65,15 @@ export const ChooseDocumentTypeInternal = withDocumentType(
     setDocumentType,
     redirectToID,
     redirectToPassport,
+    redirectToDrivingLicense,
   }: Props) => {
     const navigate = () => {
       if (documentType === PASSPORT) {
         redirectToPassport();
       } else if (documentType === ID) {
         redirectToID();
+      } else if (documentType === DRIVING_LICENSE) {
+        redirectToDrivingLicense();
       }
     };
     return (
@@ -99,6 +105,18 @@ export const ChooseDocumentTypeInternal = withDocumentType(
               National Identity Card
             </label>
           </RadioContainer>
+          <RadioContainer>
+            <label htmlFor="drivingLicense">
+              <input
+                type="radio"
+                id="drivingLicense"
+                name="documentType"
+                checked={documentType === DRIVING_LICENSE}
+                onChange={_ => setDocumentType(_ => DRIVING_LICENSE)}
+              />
+              Driving license
+            </label>
+          </RadioContainer>
         </ColumnFlex>
         <Buttons>
           <PrimaryButton onClick={navigate} inline type="submit">
@@ -115,6 +133,8 @@ const mapDispatchToProps = dispatch =>
     {
       redirectToID: () => push(VERIFICATION_ID_FRONT_VERIFICATION_ROUTE),
       redirectToPassport: () => push(VERIFICATION_PASSPORT_VERIFICATION_ROUTE),
+      redirectToDrivingLicense: () =>
+        push(VERIFICATION_DRIVING_LICENSE_VERIFICATION_ROUTE),
     },
     dispatch,
   );

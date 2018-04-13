@@ -25,6 +25,7 @@ const stepComponents = [
   'IdFrontVerification',
   'IdBackVerification',
   'PassportVerification',
+  'DrivingLicenseVerification',
   'AddressVerification',
   'SelfieVerification',
   'Confirm',

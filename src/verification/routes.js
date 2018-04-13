@@ -12,6 +12,7 @@ import {
   VERIFICATION_ADDRESS_ROUTE,
   VERIFICATION_CHOOSE_ROUTE,
   VERIFICATION_PASSPORT_VERIFICATION_ROUTE,
+  VERIFICATION_DRIVING_LICENSE_VERIFICATION_ROUTE,
   VERIFICATION_ID_FRONT_VERIFICATION_ROUTE,
   VERIFICATION_ID_BACK_VERIFICATION_ROUTE,
   VERIFICATION_ADDRESS_VERIFICATION_ROUTE,
@@ -25,6 +26,7 @@ import {
   IdFrontVerification,
   IdBackVerification,
   PassportVerification,
+  DrivingLicenseVerification,
   AddressVerification,
   SelfieVerification,
 } from './verificationFiles';
@@ -76,6 +78,16 @@ const passportVerificationRoute = (
     path={VERIFICATION_PASSPORT_VERIFICATION_ROUTE}
     component={appWrapper(
       requireAuthentication(verificationFlow(PassportVerification)),
+    )}
+  />
+);
+
+const drivingLicenseVerificationRoute = (
+  <Route
+    key={(key += 1)}
+    path={VERIFICATION_DRIVING_LICENSE_VERIFICATION_ROUTE}
+    component={appWrapper(
+      requireAuthentication(verificationFlow(DrivingLicenseVerification)),
     )}
   />
 );
@@ -134,6 +146,7 @@ export default [
   addressRoute,
   chooseVerificationRoute,
   passportVerificationRoute,
+  drivingLicenseVerificationRoute,
   idVerificationFrontRoute,
   idVerificationBackRoute,
   addressVerificationRoute,
