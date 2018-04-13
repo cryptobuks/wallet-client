@@ -121,7 +121,6 @@ export const Token = () => (
       <LogoStrip
         items={[
           { name: 'KuCoin', image: logoKuCoin, link: 'https://kucoin.com/' },
-          { name: 'YoBit', image: logoYoBit, link: 'https://yobit.net/en/' },
           { name: 'Bibox', image: logoBibox, link: 'https://www.bibox.com/' },
           { name: 'Okex', image: logoOkex, link: 'https://www.okex.com/' },
         ]}
