@@ -7,7 +7,6 @@ import logoBibox from './img/exchanges/bibox.png';
 
 import logoKuCoin from './img/exchanges/kucoin.png';
 import logoOkex from './img/exchanges/okex.png';
-import logoYoBit from './img/exchanges/yobit.png';
 
 import LogoStrip from './LogoStrip';
 
