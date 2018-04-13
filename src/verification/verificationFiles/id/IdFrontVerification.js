@@ -44,7 +44,8 @@ export const IdFrontVerification = ({
         Photo of the front side of your ID document
       </GradientHeading>
       <Paragraph center>
-        A clear photo of your ID document. Not a picture of yourself.
+        A clear photo of the front side of your ID document. Not a picture of
+        yourself.
       </Paragraph>
       <ParagraphSmall center>
         The protection of your personal details is of utmost importance to us.
