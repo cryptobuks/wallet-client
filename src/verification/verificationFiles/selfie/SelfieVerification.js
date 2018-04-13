@@ -18,7 +18,7 @@ import {
 } from '../../constants';
 import { type VerificationFileBase64 } from '../verificationFilesApi';
 import { verificationPostRoutine } from '../verificationRoutine';
-import { EUIcon } from '../../icon/EUIcon';
+import EUIcon from '../../icon/EUIcon';
 
 export type Props = {
   postVerification: VerificationFileBase64 => void,
@@ -53,13 +53,14 @@ export class SelfieVerification extends Component<Props> {
         <BackLink to={VERIFICATION_ADDRESS_VERIFICATION_ROUTE} />
         <LargeHeading center>Your photo for identification</LargeHeading>
         <Paragraph center>
-          Take a photo or upload a photo from a library so we know who you are.
+          Take a photo of yourself so we know who you are.
         </Paragraph>
         <ParagraphSmall center>
           The protection of your personal details is of utmost importance to us.
           We will always prioritize the security of our users. Change is a
           regulated and licensed EU entity.
         </ParagraphSmall>
+        <EUIcon />
         <WebcamContainer>
           <Webcam
             audio={false}
@@ -69,7 +70,6 @@ export class SelfieVerification extends Component<Props> {
             width={300}
           />
         </WebcamContainer>
-        <EUIcon />
         <PrimaryButton className="mt-4" onClick={this.capture}>
           Capture photo
         </PrimaryButton>
