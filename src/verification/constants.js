@@ -8,6 +8,8 @@ export const VERIFICATION_ID_BACK_VERIFICATION_ROUTE =
   '/verify/id-verification/back';
 export const VERIFICATION_PASSPORT_VERIFICATION_ROUTE =
   '/verify/passport-verification';
+export const VERIFICATION_DRIVING_LICENSE_VERIFICATION_ROUTE =
+  '/verify/driving-license-verification';
 export const VERIFICATION_ADDRESS_VERIFICATION_ROUTE =
   '/verify/address-verification';
 export const VERIFICATION_SELFIE_VERIFICATION_ROUTE =
