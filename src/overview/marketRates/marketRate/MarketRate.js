@@ -22,7 +22,13 @@ export class MarketRate extends Component<Props, State> {
 
   componentWillMount() {
     this.getFreshExchangeRate();
-    setInterval(() => this.getFreshExchangeRate(), 5000);
+    this.intervalId = setInterval(() => this.getFreshExchangeRate(), 5000);
+  }
+
+  componentWillUnmount() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
   }
 
   getFreshExchangeRate() {
@@ -34,6 +40,8 @@ export class MarketRate extends Component<Props, State> {
       );
     }
   }
+
+  intervalId = null;
 
   render() {
     if (this.props.toCurrency == null || this.state.exchangeRate == null) {
