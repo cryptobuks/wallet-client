@@ -66,7 +66,7 @@ const startApp = () => {
             <ThemeProvider theme={DefaultTheme}>
               <div>
                 <Switch>
-                  <Route exact path="/" component={Landing} />
+                  <Route exact path="/" component={App} />
                   <Route path="/about" component={Landing} />
                   <Route path="/careers" component={Landing} />
                   <Route path="/legal" component={Landing} />
