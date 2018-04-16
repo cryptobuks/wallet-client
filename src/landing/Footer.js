@@ -156,7 +156,7 @@ export const Footer = () => (
       <CompanyContainer>
         <Company>All Rights Reserved © Liontech PTE LTD</Company>
         <LegalLink
-          href="http://bit.ly/2qqQ3jn"
+          href="http://bit.ly/2H32TyB"
           target="_blank"
           rel="noopener noreferrer"
         >
