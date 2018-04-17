@@ -156,7 +156,7 @@ export const Footer = () => (
       <CompanyContainer>
         <Company>All Rights Reserved © xChange OÜ</Company>
         <LegalLink
-          href="http://bit.ly/2qqQ3jn"
+          href="https://getchange.com/legal/terms/"
           target="_blank"
           rel="noopener noreferrer"
         >
