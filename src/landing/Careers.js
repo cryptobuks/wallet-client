@@ -121,7 +121,7 @@ export const Careers = class Careers extends React.Component<{}> {
               </p>
               <p>
                 Change has thousands of supporters, and is backed by DHL’s
-                ex-CEO Roger Crook, alongside several other big names.
+                former CEO Roger Crook, alongside other industry leaders.
               </p>
             </IntroBody>
             <Background>
