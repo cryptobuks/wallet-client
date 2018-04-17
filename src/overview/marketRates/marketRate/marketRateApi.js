@@ -1,7 +1,7 @@
 // @flow
 
 import config from 'react-global-configuration';
-import { get } from '../../../http/index';
+import { get } from '../../../http';
 
 export type Rate = {
   fromValue: number,

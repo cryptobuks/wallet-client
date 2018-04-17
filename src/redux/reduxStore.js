@@ -25,6 +25,10 @@ import { confirmSagas, confirmReducer } from '../verification/confirm';
 import verificationSagas from '../verification/verificationFiles/verificationSagas';
 import { resetPasswordSagas } from '../user/password/reset';
 import rootReducer from './rootReducer';
+import {
+  marketRateReducer,
+  marketRateSaga,
+} from '../overview/marketRates/marketRate';
 
 // eslint-disable-next-line no-underscore-dangle
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -43,6 +47,7 @@ const appReducer = combineReducers({
   fee: feeReducer,
   confirm: confirmReducer,
   quote: quoteReducer,
+  marketRates: marketRateReducer,
   multiFactorAuth: multiFactorAuthReducer,
 });
 
@@ -67,6 +72,7 @@ store.dispatch(loginRoutine.fulfill());
   walletSagas,
   sendSagas,
   quoteSagas,
+  marketRateSaga,
   ...(addressSagas || []),
   routinePromiseWatcherSaga,
   ...(verificationSagas || []),

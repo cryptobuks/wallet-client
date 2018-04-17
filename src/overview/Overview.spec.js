@@ -7,6 +7,9 @@ import VerificationButton from './verificationButton';
 import MarketPortfolioSlider from './slider';
 import MarketRateTable from './marketRates';
 
+/* Workaround for not getting an error due to importing redux store in http file */
+jest.mock('../http');
+
 describe('Overview component', () => {
   let component;
 

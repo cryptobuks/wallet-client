@@ -3,7 +3,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import type { MapStateToProps } from 'react-redux';
-import MarketRate from './marketRate';
+import { MarketRate } from './marketRate';
 import { CurrencyName } from '../../currency';
 import { Wallet } from '../../wallet/walletState';
 import type { WalletType } from '../../wallet/walletState';

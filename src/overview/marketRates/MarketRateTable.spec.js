@@ -6,6 +6,9 @@ import { MarketRateTable, type Props } from './MarketRateTable';
 import { MarketRate } from './marketRate';
 import { testWallet } from '../../fixtures';
 
+/* Workaround for not getting an error due to importing redux store in http file */
+jest.mock('../../http');
+
 describe('MarketRateTable component', () => {
   let component;
 

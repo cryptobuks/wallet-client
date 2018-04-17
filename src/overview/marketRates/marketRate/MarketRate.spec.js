@@ -3,16 +3,14 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { MarketRate, type Props } from './MarketRate';
+import type { MarketRateState, MarketRateValue } from './marketRateState';
 
-jest.mock('./marketRateApi', () => ({
-  getMarketRate: jest.fn(() =>
-    Promise.resolve({
-      fromCurrency: 'BTC',
-      toCurrency: 'EUR',
-      exchangeRate: 6450.71,
-    }),
-  ),
-}));
+const marketRateState: MarketRateState = {
+  rates: {
+    BTC: ({ EUR: 6450.71 }: MarketRateValue),
+  },
+  error: null,
+};
 
 describe('MarketRate component', () => {
   let component;
@@ -20,6 +18,8 @@ describe('MarketRate component', () => {
   const props: Props = {
     fromCurrency: 'BTC',
     toCurrency: 'EUR',
+    marketRates: marketRateState,
+    getFreshExchangeRate: jest.fn(),
   };
 
   beforeEach(() => {
@@ -31,8 +31,6 @@ describe('MarketRate component', () => {
   });
 
   it('renders currency name with exchange rate', () => {
-    const rendered = <div>€6,450.71</div>;
-    component.update();
-    expect(component.contains(rendered)).toBe(true);
+    expect(component.contains(<div>€6,450.71</div>)).toBe(true);
   });
 });

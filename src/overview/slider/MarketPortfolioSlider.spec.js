@@ -6,6 +6,9 @@ import MarketPortfolioSlider from './MarketPortfolioSlider';
 import TotalBalance from '../balance/TotalBalance';
 import MarketRateTable from '../marketRates';
 
+/* Workaround for not getting an error due to importing redux store in http file */
+jest.mock('../../http');
+
 describe('MarketPortfolioSlider component', () => {
   let component;
 

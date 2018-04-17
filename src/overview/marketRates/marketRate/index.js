@@ -1,7 +1,5 @@
 // @flow
 
-import MarketRate from './MarketRate';
-
+export { default as marketRateReducer } from './marketRateReducer';
 export { default as MarketRate } from './MarketRate';
-
-export default MarketRate;
+export { default as marketRateSaga } from './marketRateSaga';
