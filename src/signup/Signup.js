@@ -87,4 +87,5 @@ const ConnectedSignupForm = connect(mapStateToProps)(Signup);
 
 export default reduxForm({
   form: 'signup',
+  initialValues: { tos: false },
 })(ConnectedSignupForm);
