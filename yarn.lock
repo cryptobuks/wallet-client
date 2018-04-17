@@ -8857,9 +8857,9 @@ react-waypoint@^7.3.1:
     consolidated-events "^1.1.0"
     prop-types "^15.0.0"
 
-react-webcam@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/react-webcam/-/react-webcam-0.3.1.tgz#6fa57f223759b10418715080dc33f6438ce0fee9"
+react-webcam@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/react-webcam/-/react-webcam-0.4.3.tgz#9349e2bbb8f40cc2d57485e2f2c29df1af971962"
   dependencies:
     prop-types "^15.5.8"
 
