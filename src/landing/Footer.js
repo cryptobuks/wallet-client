@@ -154,7 +154,7 @@ export const Footer = () => (
       </SocialContainer>
 
       <CompanyContainer>
-        <Company>All Rights Reserved © Liontech PTE LTD</Company>
+        <Company>All Rights Reserved © xChange OÜ</Company>
         <LegalLink
           href="http://bit.ly/2qqQ3jn"
           target="_blank"
