@@ -57,7 +57,11 @@ export const TermsAndConditionsText = () => (
       contained in these Terms, then the User may not use the Services.If you
       have any questions regarding these Terms or the Services, please contact
       Change at a{' '}
-      <a href="mailto:support@getchange.com" target="_blank">
+      <a
+        href="mailto:support@getchange.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         support@getchange.com
       </a>. In addition to these Terms, each User is obliged to comply with the
       technical rules associated, as well as the terms, conditions, rules and
@@ -102,18 +106,25 @@ export const TermsAndConditionsText = () => (
                   Conditions trading at the cryptocurrency markets YObit.Net (<a
                     href="https://yobit.net/"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://yobit.net/
                   </a>), Bibox.com (<a
                     href="https://www.bibox.com/"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://www.bibox.com/
-                  </a>), OKEX (<a href="https://www.okex.com/" target="_blank">
+                  </a>), OKEX (<a
+                    href="https://www.okex.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     https://www.okex.com/
                   </a>) and KuCoin (<a
                     href="https://www.kucoin.com/"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://www.kucoin.com/
                   </a>) as Change Coin (CAG). The list of cryptocurrency markets
@@ -856,14 +867,22 @@ export const TermsAndConditionsText = () => (
               Change is to be considered a data controller in respect of your
               personal data collected and processed in respect of providing
               Services to the Users. Change can be reached via{' '}
-              <a href="mailto:dpo@getchange.com" target="_blank">
+              <a
+                href="mailto:dpo@getchange.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 dpo@getchange.com
               </a>.
             </li>
             <li>
               Change has appointed a data protection officer, who is Marek
               Pajussaar and who can be reached via{' '}
-              <a href="mailto:dpo@getchange.com" target="_blank">
+              <a
+                href="mailto:dpo@getchange.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 dpo@getchange.com
               </a>.
             </li>
@@ -907,7 +926,11 @@ export const TermsAndConditionsText = () => (
               processing activities which Onfido Ltd undertakes as a data
               controller the User should read and review the privacy policy
               located on{' '}
-              <a href="https://onfido.com/privacy/" target="_blank">
+              <a
+                href="https://onfido.com/privacy/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 https://onfido.com/privacy/
               </a>. The Users should be aware that Change takes no
               responsibility in relation to processing activities Onfido Ltd
