@@ -103,13 +103,7 @@ export const TermsAndConditionsText = () => (
                   <span class="bold">Change Tokens</span> or{' '}
                   <span class="bold">Tokens</span> – cryptographic ERC-20 tokens
                   issued by Change, which are at the date of these Terms and
-                  Conditions trading at the cryptocurrency markets YObit.Net (<a
-                    href="https://yobit.net/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    https://yobit.net/
-                  </a>), Bibox.com (<a
+                  Conditions trading at the cryptocurrency markets Bibox.com (<a
                     href="https://www.bibox.com/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -353,77 +347,30 @@ export const TermsAndConditionsText = () => (
           <span class="bold">SECURITY</span>
           <ol>
             <li>
-              Change provides to Users the service of a cryptocurrency wallet
-              (Wallet Service) pertaining to the User’s Wallet. The Wallet
-              Service entails enabling Users to interface with certain
-              cryptocurrency networks listed in the Apps and on the Website, to
-              view and transmit information about public cryptographic keys.
-              Change has a right to unilaterally decide and change the
-              cryptocurrencies which can be stored in the Wallet using the
-              Wallet Service or converted using the Conversion Service.
+              Each User is responsible for maintaining adequate security and
+              control of any and all login IDs, passwords, private keys,
+              personal identification numbers (PINs), and any other codes or
+              devices which are intended to or can otherwise be used to access
+              the Account and/or use the Services.
             </li>
             <li>
-              Upon using the Wallet Service each User is obliged to fully adhere
-              to the terms and conditions of the Custodian, in addition to
-              adhering to these Terms.
+              Each User must prevent unauthorized access to the Account and
+              unauthorized use of the Services, the User’s account credentials
+              or private keys, and must promptly notify Change of any such
+              unauthorized access or use.
             </li>
             <li>
-              Change is not a custodian of any cryptocurrency and/or tokens
-              (including the Tokens) transferred to or held in the Wallet. All
-              cryptocurrencies and tokens (including the Tokens) are held by the
-              Custodian. Change reserves the right to change the Custodian at
-              any time, without prior notification or justification thereto. To
-              the maximum extent permissible under applicable legal acts, Change
-              assumes no liability for any possible damages caused by the
-              Custodian.
+              Each User has an obligation to fully and timely cooperate with
+              Change in the investigation of any suspected unauthorized access
+              to the Account or use of the Services.
             </li>
             <li>
-              Upon the creation of the Account, the Wallet is automatically
-              created for each User, together with a public key which serves as
-              the address of the Wallet. Change has the sole right to decide
-              whether or not to disclose that public key to the User. Change may
-              (but is not obliged to) disclose the public keys only to some
-              Users chosen (at the full discretion of Change) and may at any
-              time and without any prior notice to the Users stop or commence
-              disclosing the public keys to the Users.
-            </li>
-            <li>
-              To transmit information concerning the Account to the relevant
-              cryptocurrency network (i.e. to carry out a transaction with
-              cryptocurrency), two private keys (out of three private keys in
-              total) are required. One of such private keys is held by Change,
-              the other by the Custodian and the third is held by a third-party
-              backup service provider.
-            </li>
-            <li>
-              The User shall be solely responsible for the safekeeping of the
-              third private key. If the User appoints a third party to control
-              its private key, whether or not such appointment is made through
-              the Website or the Apps, Change will not be responsible for the
-              actions or omissions of such third party.
-            </li>
-            <li>
-              Change does not own or control the underlying software protocols
-              which govern the operation of cryptocurrencies held in the Wallet.
-              Such protocols are subject to changes in protocol rules, which are
-              outside the control of Change and may materially affect the value,
-              function, or name of the relevant cryptocurrency. Each user
-              acknowledges and agrees that:
-              <ol>
-                <li>
-                  Change is not responsible for operation of the underlying
-                  cryptocurrency protocols and that Change makes no guarantee of
-                  their functionality, security, or availability; and
-                </li>
-                <li>
-                  if a change in the software protocol related to the
-                  cryptocurrency occurs, Change may suspend the Wallet Service,
-                  and Change may decide not to provide Wallet Service for the
-                  cryptocurrency being affected or may configure the Wallet
-                  Service to enable the User to transfer the affected
-                  cryptocurrency.
-                </li>
-              </ol>
+              Each User will be solely responsible, and to the maximum extent
+              permissible under applicable legal acts, Change will have no
+              liability, for any activity that takes place with the User’s
+              Account if the Account has been accessed with the User’s account
+              credentials, regardless of whether or not such access has been
+              authorized by the User.
             </li>
           </ol>
         </li>
