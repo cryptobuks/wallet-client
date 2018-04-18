@@ -59,7 +59,7 @@ export const activeVerificationExists: Selector<
   if (status != null) {
     return ['NEW', 'STARTED', 'MANUAL_REVIEW'].indexOf(status) >= 0;
   }
-  return null;
+  return false;
 });
 
 export default { getActiveWallet };

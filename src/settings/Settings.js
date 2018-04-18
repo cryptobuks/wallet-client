@@ -75,7 +75,9 @@ export const Settings = ({
           </StyledListItem>
           <StyledListItem
             onClick={() =>
-              !user.isVerified && !verificationPending
+              !user.isVerified &&
+              !verificationPending &&
+              verificationPending != null
                 ? goTo(VERIFICATION_INTRO_ROUTE)
                 : noop
             }

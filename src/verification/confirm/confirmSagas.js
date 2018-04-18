@@ -4,11 +4,13 @@ import { push } from 'react-router-redux';
 import confirmRoutine from './confirmRoutine';
 import { routes } from '../../router';
 import verificationApi from '../verificationApi';
+import { verificationSaga } from '../verificationSaga';
 
 export function* startVerification(): Generator<IOEffect, void, *> {
   try {
     yield call(verificationApi.createVerification);
     yield put(confirmRoutine.success());
+    yield call(verificationSaga);
     yield put(push(routes.DEFAULT_ON_ENTER));
   } catch (error) {
     console.log(error);
