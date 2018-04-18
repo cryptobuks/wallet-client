@@ -98,16 +98,16 @@ export const About = () => (
     />
     <Timeline
       milestones={[
-        { title: 'Q1 2016', body: 'Change is founded in Singapore' },
-        { title: 'Q3 2017', body: '$17.5 million raised from 5600 people' },
-        { title: 'Q4 2017', body: 'Change Wallet experiment' },
-        { title: 'Q1 2018', body: 'Change Marketplace', highlighted: true },
+        { title: '', body: 'Change is founded in Singapore' },
+        { title: '', body: '$17.5 million raised from 5600 people' },
+        { title: '', body: 'Change Wallet experiment' },
+        { title: '', body: 'Change Marketplace', highlighted: true },
         {
-          title: 'Q4 2018',
+          title: '',
           body: 'Traditional currencies such as USD, EUR, GBP',
           highlighted: true,
         },
-        { title: '2020', body: 'Banking license', highlighted: true },
+        { title: '', body: 'Banking license', highlighted: true },
       ]}
     />
     <Team

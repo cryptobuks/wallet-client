@@ -206,7 +206,7 @@ class Marketplace extends React.Component<Props, State> {
                     <div>
                       <FadeTransition state={state} delay={0}>
                         <Highlight>
-                          <GradientText>Launching in 2018</GradientText>
+                          <GradientText />
                         </Highlight>
                       </FadeTransition>
                       <FadeTransition state={state} delay={150}>
