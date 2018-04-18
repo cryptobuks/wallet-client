@@ -4,7 +4,7 @@ import type RoutineAction from 'redux-saga-routines';
 import {
   verificationUploadRoutine,
   verificationPostRoutine,
-} from './verificationRoutine';
+} from './verificationFilesRoutine';
 import verificationApi from './verificationFilesApi';
 import type { VerificationFile } from './verificationFilesApi';
 

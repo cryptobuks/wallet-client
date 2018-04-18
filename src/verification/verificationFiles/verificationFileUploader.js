@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import { verificationUploadRoutine } from './verificationRoutine';
+import { verificationUploadRoutine } from './verificationFilesRoutine';
 
 type Props = {
   dispatch: *,

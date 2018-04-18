@@ -1,7 +1,7 @@
 // @flow
 
 import config from 'react-global-configuration';
-import { post } from '../http';
+import { post, get } from '../http';
 
 export type VerificationType = {
   userId: number,
@@ -11,7 +11,16 @@ export type VerificationType = {
   checks: Array<any>,
 };
 
+export type FetchedVerification = {
+  userId: number,
+  id: number,
+  status: string,
+};
+
 const createVerification = (userId: number): Promise<void> =>
   post(`${config.get('apiUrl')}/v1/me/verification`, { userId });
+
+export const getLatestVerification = (): Promise<FetchedVerification> =>
+  get(`${config.get('apiUrl')}/v1/me/verifications/latest`);
 
 export default { createVerification };

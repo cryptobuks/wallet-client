@@ -8,6 +8,8 @@ const getWallets = state => state.wallet.wallets;
 
 const getCurrency = state => state.wallet.currency;
 
+const getVerificationStatus = state => state.verification.status;
+
 export const getActiveWallet: Selector<*, *, ?Wallet> = createSelector(
   [getWallets, getActiveWalletId],
   (wallets: Array<WalletType>, activeWalletId: ?number): ?Wallet => {
@@ -48,5 +50,16 @@ export const getTotalBalance: Selector<*, *, number> = createSelector(
     return -1;
   },
 );
+
+export const activeVerificationExists: Selector<
+  *,
+  *,
+  ?boolean,
+> = createSelector([getVerificationStatus], (status: string): ?boolean => {
+  if (status != null) {
+    return ['NEW', 'STARTED', 'MANUAL_REVIEW'].indexOf(status) >= 0;
+  }
+  return null;
+});
 
 export default { getActiveWallet };

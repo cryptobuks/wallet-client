@@ -1,8 +1,8 @@
 // @flow
 
 import config from 'react-global-configuration';
-import type { VerificationType } from './verificationApi';
-import verificationApi from './verificationApi';
+import type { VerificationType, FetchedVerification } from './verificationApi';
+import verificationApi, { getLatestVerification } from './verificationApi';
 
 jest.mock('../http');
 
@@ -29,5 +29,19 @@ describe('verification api', () => {
     return verificationApi
       .createVerification(1)
       .then(response => expect(response).toEqual(testVerification));
+  });
+
+  it('gets the latest verification', () => {
+    const fetchedVerification: FetchedVerification = {
+      userId: 1,
+      id: 1,
+      status: 'NEW',
+    };
+
+    mockHttp.get = jest.fn(() => Promise.resolve(fetchedVerification));
+
+    return getLatestVerification().then(response =>
+      expect(response).toEqual(fetchedVerification),
+    );
   });
 });

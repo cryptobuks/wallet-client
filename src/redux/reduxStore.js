@@ -22,13 +22,14 @@ import { pageReducer } from '../page';
 import { flagsReducer } from '../flags';
 import { addressSagas } from '../verification/address';
 import { confirmSagas, confirmReducer } from '../verification/confirm';
-import verificationSagas from '../verification/verificationFiles/verificationSagas';
+import verificationSagas from '../verification/verificationFiles/verificationFilesSagas';
 import { resetPasswordSagas } from '../user/password/reset';
 import rootReducer from './rootReducer';
 import {
   marketRateReducer,
   marketRateSaga,
 } from '../overview/marketRates/marketRate';
+import { verificationReducer, getVerficationSaga } from '../verification';
 
 // eslint-disable-next-line no-underscore-dangle
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -38,6 +39,7 @@ export const history = window.cordova ? createHashHistory() : createHistory();
 const appReducer = combineReducers({
   router: routerReducer,
   user: userReducer,
+  verification: verificationReducer,
   wallet: walletReducer,
   login: loginReducer,
   form: formReducer,
@@ -73,6 +75,7 @@ store.dispatch(loginRoutine.fulfill());
   sendSagas,
   quoteSagas,
   marketRateSaga,
+  getVerficationSaga,
   ...(addressSagas || []),
   routinePromiseWatcherSaga,
   ...(verificationSagas || []),

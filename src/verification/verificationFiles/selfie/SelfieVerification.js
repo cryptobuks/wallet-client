@@ -17,7 +17,7 @@ import {
   VERIFICATION_CONFIRM_ROUTE,
 } from '../../constants';
 import { type VerificationFileBase64 } from '../verificationFilesApi';
-import { verificationPostRoutine } from '../verificationRoutine';
+import { verificationPostRoutine } from '../verificationFilesRoutine';
 import EUIcon from '../../icon/EUIcon';
 
 export type Props = {

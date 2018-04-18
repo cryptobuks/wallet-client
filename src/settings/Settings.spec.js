@@ -18,6 +18,7 @@ describe('Settings component', () => {
       isUsing2Fa: false,
       isVerified: false,
     },
+    verificationPending: false,
     open2FaAuthModal: jest.fn(),
     goTo: jest.fn(),
     noop: jest.fn(),
@@ -39,13 +40,18 @@ describe('Settings component', () => {
     expect(component.contains('Verification Status')).toBe(true);
   });
 
-  it('should show user as not verified', () => {
+  it('should show user status as not verified', () => {
     expect(component.contains('Not Verified')).toBe(true);
   });
 
-  it('should show user as not verified', () => {
+  it('should show user status as verified', () => {
     component.setProps({ user: { isVerified: true } });
     expect(component.contains('Verified')).toBe(true);
+  });
+
+  it('should show user status as pending', () => {
+    component.setProps({ verificationPending: true });
+    expect(component.contains('Pending')).toBe(true);
   });
 
   it('should show log out link', () => {
