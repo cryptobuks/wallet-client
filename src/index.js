@@ -34,6 +34,7 @@ import ResetPassword, { ResetPasswordDone } from './user/password/reset';
 import UpdatePassword from './user/password/update';
 import Verification from './verification/Verification';
 import { Exchange } from './exchange/Exchange';
+import sourceOfFundsRoutes from './order/buy/routes';
 
 const animationEnter = keyframes`${slideInRight}`;
 
@@ -122,6 +123,7 @@ const startApp = () => {
                     component={appWrapper(authenticatedPage(Verification))}
                   />
                   {verificationRoutes}
+                  {sourceOfFundsRoutes}
                 </Switch>
                 <Route
                   path={routes.UPDATE_PASSWORD}

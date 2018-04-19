@@ -90,9 +90,9 @@ export const FieldInput = ({
 }: any) => {
   const renderInput = () => (
     <Input
-      className={`form-control ${touched && error
-        ? 'is-invalid'
-        : ''} ${input.className}`}
+      className={`form-control ${touched && error ? 'is-invalid' : ''} ${
+        input.className
+      }`}
       placeholder={placeholder}
       {...input}
       type={type}
@@ -126,7 +126,7 @@ export const FieldInput = ({
   );
 };
 
-const renderSelectField = ({
+export const renderSelectField = ({
   addon,
   input,
   items,
@@ -135,9 +135,9 @@ const renderSelectField = ({
 }: any) => {
   const renderSelect = () => (
     <Select
-      className={`form-control ${touched && error
-        ? 'is-invalid'
-        : ''} ${input.className}`}
+      className={`form-control ${touched && error ? 'is-invalid' : ''} ${
+        input.className
+      }`}
       {...input}
     >
       {items.map((item, index) => (
@@ -186,9 +186,9 @@ export const renderCheckbox = ({
       <TosCheckbox
         {...input}
         type="checkbox"
-        className={`form-check-input ${touched && error
-          ? 'is-invalid'
-          : ''} ${input.className}`}
+        className={`form-check-input ${touched && error ? 'is-invalid' : ''} ${
+          input.className
+        }`}
       />
       {label}
     </label>
