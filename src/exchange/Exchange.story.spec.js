@@ -19,7 +19,7 @@ storiesOf('Page', module).add('Exchange', () => {
       beforeEach(() => {
         component = shallow(<Exchange />);
       });
-      it('renders address verification component', () => {
+      it('renders exchange component', () => {
         expect(component);
       });
     }),

@@ -18,6 +18,7 @@ import ScrollToTop from './ScrollToTop';
 import TermsAndConditions from './TermsAndConditions';
 
 import variables from '../ui/variables';
+import { LegalDefinitions } from './LegalDefinitions';
 
 const Container = styled.div`
   overflow: hidden;
@@ -75,6 +76,7 @@ class Landing extends React.Component<Props, State> {
             <Route path="/careers" component={Careers} />
             <Route path="/legal/terms" component={TermsAndConditions} />
             <Route path="/legal/privacy-policy" component={PrivacyPolicy} />
+            <Route path="/legal/definitions" component={LegalDefinitions} />
             <Route path="/notify-me-success" component={NotifyMeSuccess} />
             <Route path="/" component={Home} />
           </Switch>
