@@ -16,9 +16,7 @@ import {
   WrappedContent,
 } from '../ui';
 import signupFormSubmitHandler from './signupFormSubmitHandler';
-
-export const required = (value: any) =>
-  value ? undefined : "Don't forget this field :)";
+import { required } from '../form';
 
 export type Props = {
   authenticated: boolean,

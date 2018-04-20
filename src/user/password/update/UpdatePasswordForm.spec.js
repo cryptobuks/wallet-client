@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import { type FormProps } from 'redux-form';
 import { renderCheckbox, Field, PrimaryButton, LinkButton } from '../../../ui';
 
-import { PasswordForm, required } from './UpdatePasswordForm';
+import { PasswordForm } from './UpdatePasswordForm';
 
 describe('PasswordForm component', () => {
   let component;

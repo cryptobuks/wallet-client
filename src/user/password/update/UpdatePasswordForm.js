@@ -16,9 +16,7 @@ import { updatePassword } from './updatePasswordRoutines';
 import withUser from '../../withUser';
 import { routes } from '../../../router';
 import { verificationOauthTokenLoginRoutine } from '../../../login/verification-oauth-token/verificationOauthTokenRoutines';
-
-export const required = (value: any) =>
-  value ? undefined : "Don't forget this field :)";
+import { required } from '../../../form';
 
 export const PasswordForm = (props: FormProps) => {
   const { handleSubmit, previousPage, error, pristine, submitting } = props;

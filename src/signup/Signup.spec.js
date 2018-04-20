@@ -1,7 +1,8 @@
 // @flow
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Signup, required } from './Signup';
+import { Signup } from './Signup';
+import { required } from '../form';
 import type { Props } from './Signup';
 import { renderCheckbox, Field } from '../ui';
 
